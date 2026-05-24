@@ -57,7 +57,7 @@ nav.top .cta:hover { background: var(--cream); color: var(--burgundy); border-co
 @keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1); } }
 .hero-overlay { position: absolute; inset: 0; background:
   linear-gradient(to top, rgba(78, 2, 32, 0.78) 0%, rgba(78, 2, 32, 0.42) 35%, rgba(78, 2, 32, 0.12) 65%, rgba(78, 2, 32, 0.35) 100%); }
-.hero-content { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 48px 88px; max-width: 1440px; margin: 0 auto; color: var(--cream); width: 100%; }
+.hero-content { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 48px 72px; max-width: 1440px; margin: 0 auto; color: var(--cream); width: 100%; }
 .hero-content .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(249, 248, 245, 0.9); margin-bottom: 28px; display: inline-flex; align-items: center; gap: 14px; }
 .hero-content .eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--coral); }
 .hero-content h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(48px, 7.6vw, 124px); line-height: 0.95; letter-spacing: -0.03em; color: var(--cream); margin-bottom: 32px; max-width: 1100px; }
@@ -68,18 +68,18 @@ nav.top .cta:hover { background: var(--cream); color: var(--burgundy); border-co
 .hero-content .primary:hover { transform: translateY(-2px); }
 .hero-content .secondary { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; padding: 16px 8px; color: var(--cream); transition: opacity 0.2s; }
 .hero-content .secondary:hover { opacity: 0.7; }
-.hero-scroll { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(249, 248, 245, 0.55); text-transform: uppercase; }
+.hero-scroll { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(249, 248, 245, 0.55); text-transform: uppercase; }
 
 /* STATS STRIP */
-.stats { background: var(--cream); padding: 72px 48px; border-bottom: 1px solid var(--line); }
+.stats { background: var(--cream); padding: 48px 48px; border-bottom: 1px solid var(--line); }
 .stats-inner { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px; }
 .stat-cell { display: flex; flex-direction: column; gap: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
 .stat-cell strong { display: block; font-family: 'Fraunces', serif; font-weight: 500; font-size: 64px; color: var(--fg); line-height: 1; letter-spacing: -0.03em; }
 .stat-cell span { display: block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--fg-soft); }
 
 /* SECTIONS */
-section.block { max-width: 1440px; margin: 0 auto; padding: 96px 48px; }
-.section-head { display: grid; grid-template-columns: 200px 1fr; gap: 48px; align-items: baseline; margin-bottom: 48px; }
+section.block { max-width: 1440px; margin: 0 auto; padding: 72px 48px; }
+.section-head { display: grid; grid-template-columns: 180px 1fr; gap: 40px; align-items: baseline; margin-bottom: 32px; }
 .section-head .num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.24em; color: var(--accent); padding-top: 14px; text-transform: uppercase; }
 .section-head h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(38px, 5.4vw, 80px); line-height: 1.02; letter-spacing: -0.028em; color: var(--fg); max-width: 900px; }
 .section-head h2 em { font-style: italic; font-weight: 400; }
@@ -87,7 +87,7 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 96px 48px; }
 
 /* SERVICES */
 .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.service-card { background: var(--bg); padding: 56px 44px; transition: background 0.3s; }
+.service-card { background: var(--bg); padding: 40px 36px; transition: background 0.3s; }
 .service-card:hover { background: var(--cream-warm); }
 .service-card .num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--accent); margin-bottom: 24px; text-transform: uppercase; }
 .service-card h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(32px, 3.4vw, 44px); letter-spacing: -0.025em; margin-bottom: 18px; color: var(--fg); line-height: 1.05; }
@@ -110,8 +110,8 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 96px 48px; }
 .work-link a:hover { background: var(--fg); color: var(--cream); transform: translateY(-2px); }
 
 /* ENGAGEMENT MODEL */
-.engage { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.engage-card { padding: 56px 48px; border-radius: 18px; display: flex; flex-direction: column; gap: 18px; }
+.engage { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.engage-card { padding: 44px 36px; border-radius: 16px; display: flex; flex-direction: column; gap: 16px; }
 .engage-card.light { background: var(--cream-warm); color: var(--fg); }
 .engage-card.dark { background: var(--burgundy); color: var(--cream); }
 .engage-card.dark .num { color: var(--pink); }
@@ -137,17 +137,17 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 96px 48px; }
 
 /* ABOUT US */
 .about-body { max-width: 800px; }
-.about-body p { font-family: 'Fraunces', serif; font-weight: 400; font-style: italic; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.4; letter-spacing: -0.015em; color: var(--fg); }
+.about-body p { font-family: 'Fraunces', serif; font-weight: 400; font-style: italic; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.4; letter-spacing: -0.015em; color: var(--fg); }
 
 /* TESTIMONIAL */
-.testi { padding: 96px 48px; max-width: 1440px; margin: 0 auto; }
+.testi { padding: 64px 48px; max-width: 1440px; margin: 0 auto; }
 .testi-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
 .testi .num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.24em; color: var(--accent); margin-bottom: 36px; text-transform: uppercase; }
 .testi blockquote { font-family: 'Fraunces', serif; font-weight: 400; font-style: italic; font-size: clamp(26px, 3.4vw, 44px); line-height: 1.22; letter-spacing: -0.02em; color: var(--fg); margin-bottom: 36px; }
 .testi cite { font-family: 'DM Mono', monospace; font-size: 11px; font-style: normal; letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-soft); display: block; }
 
 /* CTA, cinematic full bleed */
-.end-cta { background: var(--burgundy); color: var(--cream); padding: 120px 48px; text-align: center; }
+.end-cta { background: var(--burgundy); color: var(--cream); padding: 88px 48px; text-align: center; }
 .end-cta h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(56px, 8vw, 128px); line-height: 0.95; letter-spacing: -0.03em; margin-bottom: 24px; color: var(--cream); }
 .end-cta h2 em { font-style: italic; font-weight: 400; color: var(--pink); }
 .end-cta p { font-family: 'Inter', sans-serif; font-size: 17px; color: rgba(249, 248, 245, 0.78); margin-bottom: 44px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.55; }
@@ -158,9 +158,9 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 96px 48px; }
 .end-cta .secondary:hover { opacity: 0.7; }
 
 /* FOOTER */
-footer { background: var(--cream); border-top: 1px solid var(--line); padding: 72px 48px 28px; }
+footer { background: var(--cream); border-top: 1px solid var(--line); padding: 48px 48px 24px; }
 footer .foot-inner { max-width: 1440px; margin: 0 auto; }
-footer .foot-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; padding-bottom: 56px; }
+footer .foot-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; }
 footer .brand img { height: 32px; margin-bottom: 16px; }
 footer .brand h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; color: var(--fg); margin-bottom: 14px; max-width: 360px; }
 footer .brand p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; color: var(--fg-soft); max-width: 360px; }
@@ -274,7 +274,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
     </div>
     <div class="service-card">
       <div class="num">04 · Websites</div>
-      <h3>Brand sites and e-commerce.</h3>
+      <h3>Websites.</h3>
       <p>Brand sites, editorial e-commerce, landing pages and CMS.</p>
     </div>
   </div>
@@ -391,10 +391,10 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 <section class="block" id="about">
   <div class="section-head">
     <div class="num">04 / About us</div>
-    <h2>A small studio, run by two people.</h2>
+    <h2>BRND OUT LOUD.</h2>
   </div>
   <div class="about-body">
-    <p>BRND OUT LOUD is run by Karen and Nadia. We work directly with every client, from the first call to every monthly delivery. No account team in the middle, no handoffs, no brief written twice.</p>
+    <p>A full-service creative agency, founded by Karen and Nadia. We work with consumer brands worldwide.</p>
   </div>
 </section>
 
@@ -463,7 +463,6 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 const testimonials = [
   { q: "We came in with a list of fonts. We left with a point of view. Six weeks later we were getting messages from people who had never bought a thing from us, just to say the brand made them stop scrolling.", c: "Marisol Vega · Founder, Maestra" },
   { q: "The work is genuinely beautiful, but it's the strategy underneath that pays the rent.", c: "Ines Câmara · Owner, Casa Tavani" },
-  { q: "A brand book and a backbone. That's what they hand you.", c: "Theo Mensah · Founder, House of Maeve" },
   { q: "The kind of studio that gives you a point of view, then shows up every week to actually run it.", c: "Hana Park · CEO, Aurora Skin" }
 ];
 let ti = 0;
