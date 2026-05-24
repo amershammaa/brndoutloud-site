@@ -113,16 +113,19 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 72px 48px; }
 .svc p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.55; color: var(--fg-soft); }
 
 /* PACKAGES */
-.packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.pkg { padding: 32px 30px; border-radius: 16px; display: flex; flex-direction: column; gap: 14px; background: var(--cream-warm); color: var(--fg); transition: transform 0.3s, box-shadow 0.3s; position: relative; min-height: 280px; }
+.packages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.pkg { padding: 28px 26px; border-radius: 16px; display: flex; flex-direction: column; gap: 14px; background: var(--cream-warm); color: var(--fg); transition: transform 0.3s, box-shadow 0.3s; position: relative; min-height: 260px; }
 .pkg:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -20px rgba(108,6,43,0.18); }
 .pkg.dark { background: var(--burgundy); color: var(--cream); }
-.pkg.popular { border: 2px solid var(--accent); }
+
 .pkg .pk-tag { display: inline-flex; align-items: center; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; background: var(--accent); color: var(--cream); align-self: flex-start; }
 .pkg.dark .pk-tag { background: var(--pink); color: var(--burgundy); }
-.pkg h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 28px; letter-spacing: -0.02em; line-height: 1.05; }
+.pkg h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(22px, 2vw, 26px); letter-spacing: -0.02em; line-height: 1.05; }
 .pkg p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.55; opacity: 0.78; }
-.pkg .pk-price { margin-top: auto; padding-top: 12px; font-family: 'Fraunces', serif; font-weight: 500; font-size: 36px; letter-spacing: -0.025em; line-height: 1.1; }
+.pkg .pk-price { margin-top: auto; padding-top: 12px; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--fg-soft); line-height: 1.3; }
+.pkg.dark .pk-price { color: rgba(249,248,245,0.7); }
+.pkg .pk-price strong { display: block; font-family: 'Fraunces', serif; font-weight: 500; font-size: 30px; letter-spacing: -0.025em; line-height: 1.1; color: var(--fg); margin: 4px 0; }
+.pkg.dark .pk-price strong { color: var(--cream); }
 .pkg .pk-price small { font-size: 14px; font-weight: 400; opacity: 0.7; margin-left: 2px; }
 .pkg .pk-cta { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; border-bottom: 1px solid currentColor; padding-bottom: 4px; transition: opacity 0.25s; color: inherit; }
 .pkg .pk-cta:hover { opacity: 0.7; }
@@ -223,7 +226,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   nav.top .nav-toggle { display: flex; }
   .svc-list { grid-template-columns: repeat(2, 1fr); }
   .packages { grid-template-columns: repeat(2, 1fr); }
-  .pkg { padding: 28px 24px; min-height: 240px; }
+  .pkg { padding: 24px 22px; min-height: 220px; }
   .work-grid { grid-template-columns: repeat(2, 1fr); }
   .testi-body { margin-left: 0; }
   .testi-block { padding: 56px 24px; }
@@ -338,45 +341,30 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 
     <div class="pkg">
       <h3>Branding</h3>
-      <p>Strategy, naming, identity system, brand book and launch toolkit.</p>
-      <div class="pk-price">$7,500</div>
+      <p>Strategy, naming, identity system and brand book. Built to last.</p>
+      <div class="pk-price">Starting <strong>2,000 AED</strong></div>
       <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
     </div>
 
     <div class="pkg">
       <h3>Website</h3>
-      <p>Brand site or e-commerce. Designed and built end to end, fully responsive, on-brand.</p>
-      <div class="pk-price">$8,500</div>
+      <p>Brand sites, e-commerce and landing pages. Designed and built end to end.</p>
+      <div class="pk-price">Starting <strong>1,500 AED</strong></div>
+      <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
+    </div>
+
+    <div class="pkg">
+      <h3>Social media</h3>
+      <p>Monthly content for Instagram, TikTok and Facebook. Reels, posts, captions and ads.</p>
+      <div class="pk-price">Starting <strong>4,000 AED</strong><small>/mo</small></div>
       <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
     </div>
 
     <div class="pkg dark">
       <div class="pk-tag">Bundle</div>
       <h3>Comprehensive</h3>
-      <p>Branding plus website plus premium social. The full stack, under one team.</p>
-      <div class="pk-price">From $14,500 <small>+ $4,499/mo</small></div>
-      <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
-    </div>
-
-    <div class="pkg">
-      <h3>Social, Starter</h3>
-      <p>4 reels + 5 static posts per month. Captions, calendar, account management.</p>
-      <div class="pk-price">$1,499<small>/mo</small></div>
-      <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
-    </div>
-
-    <div class="pkg popular">
-      <div class="pk-tag">Popular</div>
-      <h3>Social, Advanced</h3>
-      <p>6 reels + 10 posts + 1 monthly shoot. Art direction, captions, calendar.</p>
-      <div class="pk-price">$2,499<small>/mo</small></div>
-      <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
-    </div>
-
-    <div class="pkg">
-      <h3>Social, Premium</h3>
-      <p>12 reels + 20 posts + 2 monthly shoots. UGC and paid ads add-on, full coverage.</p>
-      <div class="pk-price">$4,499<small>/mo</small></div>
+      <p>Branding, website and social, run together. The full stack under one team.</p>
+      <div class="pk-price">From <strong>7,500 AED</strong><small> + 4,000 AED/mo</small></div>
       <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
     </div>
 
