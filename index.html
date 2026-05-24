@@ -71,11 +71,11 @@ nav.top .cta:hover { background: var(--cream); color: var(--burgundy); border-co
 .hero-scroll { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(249, 248, 245, 0.55); text-transform: uppercase; }
 
 /* STATS STRIP */
-.stats { background: var(--cream); padding: 56px 48px; border-bottom: 1px solid var(--line); }
-.stats-inner { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
-.stats div { display: flex; flex-direction: column; gap: 8px; }
-.stats strong { font-family: 'Fraunces', serif; font-weight: 500; font-size: 56px; color: var(--fg); line-height: 1; letter-spacing: -0.03em; }
-.stats span { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-soft); }
+.stats { background: var(--cream); padding: 72px 48px; border-bottom: 1px solid var(--line); }
+.stats-inner { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px; }
+.stat-cell { display: flex; flex-direction: column; gap: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+.stat-cell strong { display: block; font-family: 'Fraunces', serif; font-weight: 500; font-size: 64px; color: var(--fg); line-height: 1; letter-spacing: -0.03em; }
+.stat-cell span { display: block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--fg-soft); }
 
 /* SECTIONS */
 section.block { max-width: 1440px; margin: 0 auto; padding: 120px 48px; }
@@ -109,13 +109,21 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 120px 48px; }
 .work-link a { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; padding: 16px 30px; border-radius: 999px; border: 1px solid var(--fg); transition: background 0.25s, color 0.25s, transform 0.2s; }
 .work-link a:hover { background: var(--fg); color: var(--cream); transform: translateY(-2px); }
 
-/* PROCESS */
-.process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-.process-step { padding: 0 32px 12px; border-left: 1px solid var(--line); transition: background 0.3s; }
-.process-step:first-child { border-left: none; padding-left: 0; }
-.process-step .pnum { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 72px; line-height: 1; color: var(--coral); opacity: 0.85; margin-bottom: 28px; letter-spacing: -0.02em; }
-.process-step h4 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 26px; margin-bottom: 14px; letter-spacing: -0.02em; color: var(--fg); }
-.process-step p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; color: var(--fg-soft); }
+/* ENGAGEMENT MODEL */
+.engage { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.engage-card { padding: 56px 48px; border-radius: 18px; display: flex; flex-direction: column; gap: 18px; }
+.engage-card.light { background: var(--cream-warm); color: var(--fg); }
+.engage-card.dark { background: var(--burgundy); color: var(--cream); }
+.engage-card.dark .num { color: var(--pink); }
+.engage-card .num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; }
+.engage-card h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(32px, 3.4vw, 44px); letter-spacing: -0.025em; line-height: 1.05; }
+.engage-card p { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6; opacity: 0.85; max-width: 500px; }
+.engage-card .engage-list { list-style: none; padding: 16px 0; border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; display: flex; flex-direction: column; gap: 10px; opacity: 0.85; }
+.engage-card.light .engage-list { border-color: rgba(108, 6, 43, 0.18); }
+.engage-card.dark .engage-list { border-color: rgba(249, 248, 245, 0.22); }
+.engage-card .engage-list li { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.5; padding-left: 16px; position: relative; }
+.engage-card .engage-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 1px; background: currentColor; opacity: 0.7; }
+.engage-card .engage-meta { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.65; margin-top: 4px; }
 
 /* FOUNDERS */
 .founders-block { background: var(--cream-warm); padding: 120px 48px; }
@@ -171,9 +179,9 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   .services { grid-template-columns: 1fr; }
   .service-card { padding: 40px 28px; }
   .work-grid { grid-template-columns: 1fr 1fr; }
-  .process { grid-template-columns: 1fr 1fr; gap: 32px 0; }
-  .process-step { padding: 0 24px 12px; }
-  .process-step:nth-child(3) { border-left: none; padding-left: 0; }
+  .engage { grid-template-columns: 1fr; gap: 18px; }
+  .engage-card { padding: 40px 28px; }
+  
   .founders { grid-template-columns: 1fr; gap: 56px; }
   .founders-block { padding: 80px 24px; }
   .testi { padding: 80px 24px; }
@@ -183,9 +191,9 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 }
 @media (max-width: 640px) {
   .work-grid { grid-template-columns: 1fr; }
-  .process { grid-template-columns: 1fr; }
-  .process-step { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 28px; }
-  .process-step:first-child { border-top: none; padding-top: 0; }
+  
+  
+  
   footer .foot-top { grid-template-columns: 1fr; }
 }
 
@@ -230,10 +238,10 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 <!-- STATS -->
 <section class="stats">
   <div class="stats-inner">
-    <div><strong>10</strong><span>Active clients</span></div>
-    <div><strong>4</strong><span>Disciplines</span></div>
-    <div><strong>3</strong><span>Continents</span></div>
-    <div><strong>2024</strong><span>Founded</span></div>
+    <div class="stat-cell"><strong>10</strong><span>Active clients</span></div>
+    <div class="stat-cell"><strong>4</strong><span>Disciplines</span></div>
+    <div class="stat-cell"><strong>3</strong><span>Continents</span></div>
+    <div class="stat-cell"><strong>2024</strong><span>Founded</span></div>
   </div>
 </section>
 
@@ -241,8 +249,8 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 <section class="block" id="services">
   <div class="section-head">
     <div class="num">01 / Services</div>
-    <h2>Everything a brand needs, <em>under one roof.</em></h2>
-    <div class="aside">We do four things, and we do them well. No subcontracting, no handoffs, no agency stack.</div>
+    <h2>What we do.</h2>
+    <div class="aside">Four services, run by the same two people from start to finish. Branding, design, social media and websites.</div>
   </div>
   <div class="services">
     <div class="service-card">
@@ -344,33 +352,39 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   <div class="work-link"><a href="work.html">See all work →</a></div>
 </section>
 
-<!-- PROCESS -->
+<!-- ENGAGEMENT MODEL -->
 <section class="block" id="process">
   <div class="section-head">
     <div class="num">03 / How we work</div>
-    <h2>A simple, <em>focused</em> process.</h2>
-    <div class="aside">From kickoff to launch in eight to twelve weeks, with one team across every discipline.</div>
+    <h2>Two ways to <em>work with us.</em></h2>
+    <div class="aside">Most clients start with a brand build, then keep us on as their ongoing creative team.</div>
   </div>
-  <div class="process">
-    <div class="process-step">
-      <div class="pnum">01</div>
-      <h4>Discovery.</h4>
-      <p>A working session with the founder to understand the business, the audience and the goal. No template surveys.</p>
+  <div class="engage">
+    <div class="engage-card light">
+      <div class="num">A / One-time project</div>
+      <h3>Brand build.</h3>
+      <p>A complete brand built from scratch. Positioning and strategy, naming, visual identity, brand book, website, and launch materials. Everything needed to take a brand from idea to live.</p>
+      <ul class="engage-list">
+        <li>Strategy and positioning</li>
+        <li>Naming, if needed</li>
+        <li>Visual identity and brand book</li>
+        <li>Website design and build</li>
+        <li>Launch toolkit and day-one content</li>
+      </ul>
+      <div class="engage-meta">Roughly eight to twelve weeks. One-time fee.</div>
     </div>
-    <div class="process-step">
-      <div class="pnum">02</div>
-      <h4>Strategy.</h4>
-      <p>Positioning, voice and naming if you need it. We finish the strategy before any design work begins.</p>
-    </div>
-    <div class="process-step">
-      <div class="pnum">03</div>
-      <h4>Design and build.</h4>
-      <p>Identity, website and social system, built in parallel by the same two people from start to finish.</p>
-    </div>
-    <div class="process-step">
-      <div class="pnum">04</div>
-      <h4>Launch.</h4>
-      <p>A coordinated rollout across the site, social and paid channels, with day-one content ready to go.</p>
+    <div class="engage-card dark">
+      <div class="num">B / Ongoing partnership</div>
+      <h3>Run the brand with us.</h3>
+      <p>Once the brand is live, we keep running it. Monthly social media, content production, ads, and design support. We stay close to the business, so the brand stays sharp.</p>
+      <ul class="engage-list">
+        <li>Monthly social media production</li>
+        <li>Content and creative direction</li>
+        <li>Paid social and meta ads</li>
+        <li>Ongoing design support</li>
+        <li>Brand-system updates as the business grows</li>
+      </ul>
+      <div class="engage-meta">Monthly retainer. Month to month, no annual lock-in.</div>
     </div>
   </div>
 </section>
@@ -380,21 +394,19 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   <div class="founders-inner">
     <div class="section-head">
       <div class="num">04 / The studio</div>
-      <h2>Two founders. <em>One opinion.</em></h2>
-      <div class="aside">A two-woman studio, on purpose. The people you meet are the people who do the work.</div>
+      <h2>Karen and Nadia.</h2>
+      <div class="aside">A two-woman studio. The people you meet are the people who do the work, from kickoff to every monthly delivery.</div>
     </div>
     <div class="founders">
       <div class="founder">
         <div class="role">Founder · Creative</div>
         <div class="name">Karen.</div>
-        <p class="bio">Brand and art direction. Over a decade building identities for hospitality, fashion and skincare brands across the region. The visual conscience of every project that leaves the studio.</p>
-        <div class="quote">"A logo is a noun. A brand is a verb."</div>
+        <p class="bio">Brand and art direction. Over a decade building identities for hospitality, fashion and skincare brands across the region. Karen leads the visual side of every project.</p>
       </div>
       <div class="founder">
         <div class="role">Founder · Strategy</div>
         <div class="name">Nadia.</div>
-        <p class="bio">Strategy, voice and the words on the page. Ex-agency planner with a soft spot for founders who care about the details. The reason every brand we build has something to say.</p>
-        <div class="quote">"Quiet brands get scrolled past."</div>
+        <p class="bio">Strategy, voice and the words on the page. Ex-agency planner with a soft spot for founders who care about the details. Nadia runs strategy, copy and the social side of every account.</p>
       </div>
     </div>
   </div>
