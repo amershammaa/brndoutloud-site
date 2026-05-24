@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>BRND OUT LOUD. A creative agency.</title>
 <meta name="description" content="A creative agency for ambitious brands. Full-service branding, web design and social media." />
-<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="icon" type="image/png" href="assets/logo.png?v=2" />
 <meta property="og:title" content="BRND OUT LOUD. A creative agency." />
 <meta property="og:description" content="A creative agency for ambitious brands. Full-service branding, web design and social media." />
-<meta property="og:image" content="assets/hero.png" />
+<meta property="og:image" content="assets/hero.png?v=2" />
 <meta property="og:url" content="https://brndoutloud.co" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -104,13 +104,7 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 72px 48px; }
 .section-head h2 em { font-style: italic; font-weight: 400; }
 .section-head .aside { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.55; color: var(--fg-soft); max-width: 360px; padding-top: 18px; }
 
-/* SERVICES (simple list) */
-.svc-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--accent); border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); }
-.svc { background: var(--bg); padding: 36px 28px; display: flex; flex-direction: column; gap: 12px; transition: background 0.3s; }
-.svc:hover { background: var(--cream-warm); }
-.svc .svc-n { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: var(--cream); background: var(--accent); padding: 4px 10px; border-radius: 999px; align-self: flex-start; }
-.svc h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 26px; letter-spacing: -0.02em; color: var(--fg); line-height: 1.1; }
-.svc p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.55; color: var(--fg-soft); }
+
 
 /* PACKAGES */
 .packages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
@@ -224,7 +218,6 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   nav.top .links { display: none; }
   nav.top .logo .name { display: none; }
   nav.top .nav-toggle { display: flex; }
-  .svc-list { grid-template-columns: repeat(2, 1fr); }
   .packages { grid-template-columns: repeat(2, 1fr); }
   .pkg { padding: 24px 22px; min-height: 220px; }
   .work-grid { grid-template-columns: repeat(2, 1fr); }
@@ -236,7 +229,6 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   .stat-cell { gap: 10px; padding-top: 10px; }
   .stat-cell strong { font-size: 32px; }
   .stat-cell span { font-size: 8.5px; letter-spacing: 0.18em; }
-  .svc-list { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
   .hero-content h1 { font-size: clamp(40px, 10vw, 64px); }
   .hero-content p { font-size: 16px; }
@@ -270,8 +262,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
         <img src="assets/logo.png" alt="BRND OUT LOUD" />
       </a>
       <div class="links">
-        <a href="#services">Services</a>
-        <a href="#packages">Packages</a>
+        <a href="#packages">Services</a>
         <a href="work.html">Work</a>
         <a href="#contact">Contact</a>
       </div>
@@ -280,8 +271,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
       </button>
     </div>
     <div class="mobile-menu">
-      <a href="#services" onclick="document.body.classList.remove('menu-open')">Services</a>
-      <a href="#packages" onclick="document.body.classList.remove('menu-open')">Packages</a>
+      <a href="#packages" onclick="document.body.classList.remove('menu-open')">Services</a>
       <a href="work.html">Work</a>
       <a href="#contact" onclick="document.body.classList.remove('menu-open')">Contact</a>
       <a href="https://wa.me/971504898439" target="_blank" rel="noopener" class="mobile-wa">WhatsApp +971 50 489 8439</a>
@@ -309,41 +299,13 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   </div>
 </section>
 
-<!-- SERVICES (simple list) -->
-<section class="block" id="services">
-  <div class="section-head">
-    <div class="num">01 / Services</div>
-    <h2>What we do.</h2>
-  </div>
-  <div class="svc-list">
-    <div class="svc">
-      <span class="svc-n">01</span>
-      <h3>Branding</h3>
-      <p>Identity, strategy, brand books.</p>
-    </div>
-    <div class="svc">
-      <span class="svc-n">02</span>
-      <h3>Social media</h3>
-      <p>Instagram, TikTok and Facebook, run monthly.</p>
-    </div>
-    <div class="svc">
-      <span class="svc-n">03</span>
-      <h3>Websites</h3>
-      <p>Brand sites, e-commerce, landing pages.</p>
-    </div>
-    <div class="svc">
-      <span class="svc-n">04</span>
-      <h3>Design</h3>
-      <p>Print, packaging, editorial, collateral.</p>
-    </div>
-  </div>
-</section>
+
 
 <!-- PACKAGES -->
 <section class="block" id="packages">
   <div class="section-head">
-    <div class="num">02 / Packages</div>
-    <h2>Pick a <em>package.</em></h2>
+    <div class="num">01 / Services</div>
+    <h2>What we do, <em>and what it costs.</em></h2>
   </div>
   <div class="packages">
 
@@ -383,7 +345,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 <!-- WORK -->
 <section class="block" id="work">
   <div class="section-head">
-    <div class="num">03 / Work</div>
+    <div class="num">02 / Work</div>
     <h2>Brands we've built.</h2>
   </div>
   <div class="work-grid">
@@ -439,7 +401,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 <section class="testi-block" id="reviews">
   <div class="testi-inner">
     <div class="section-head">
-      <div class="num">04 / Reviews</div>
+      <div class="num">03 / Reviews</div>
       <h2>What clients <em>say.</em></h2>
     </div>
     <div class="testi-body">
@@ -473,7 +435,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
         <h4>Studio</h4>
         <ul>
           <li><a href="work.html">Work</a></li>
-          <li><a href="#services">Services</a></li>
+          <li><a href="#packages">Services</a></li>
           <li><a href="#process">Process</a></li>
         </ul>
       </div>
