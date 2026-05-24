@@ -247,6 +247,14 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   nav.top .logo img { height: 72px; }
 }
 
+
+@media (max-width: 640px) {
+  .packages { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 4px 24px 12px; margin: 0 -24px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .packages::-webkit-scrollbar { display: none; }
+  .pkg { flex: 0 0 82%; scroll-snap-align: start; min-width: 280px; min-height: 240px; padding: 24px 22px; }
+  .pkg-footer { padding: 0 4px; }
+}
+
 /* REVEAL */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s, transform 0.8s cubic-bezier(.2,.8,.2,1); }
 .reveal.in { opacity: 1; transform: translateY(0); }
@@ -342,21 +350,21 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
     <div class="pkg">
       <h3>Branding</h3>
       <p>Strategy, naming, identity system and brand book. Built to last.</p>
-      <div class="pk-price">Starting <strong>2,000 AED</strong></div>
+      <div class="pk-price">Starting <strong>$2,000</strong></div>
       <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
     </div>
 
     <div class="pkg">
       <h3>Website</h3>
       <p>Brand sites, e-commerce and landing pages. Designed and built end to end.</p>
-      <div class="pk-price">Starting <strong>1,500 AED</strong></div>
+      <div class="pk-price">Starting <strong>$1,500</strong></div>
       <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
     </div>
 
     <div class="pkg">
       <h3>Social media</h3>
       <p>Monthly content for Instagram, TikTok and Facebook. Reels, posts, captions and ads.</p>
-      <div class="pk-price">Starting <strong>4,000 AED</strong><small>/mo</small></div>
+      <div class="pk-price">Starting <strong>$4,000</strong><small>/mo</small></div>
       <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
     </div>
 
@@ -364,7 +372,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
       <div class="pk-tag">Bundle</div>
       <h3>Comprehensive</h3>
       <p>Branding, website and social, run together. The full stack under one team.</p>
-      <div class="pk-price">From <strong>7,500 AED</strong><small> + 4,000 AED/mo</small></div>
+      <div class="pk-price">First month <strong>$7,500</strong><small>, then $4,000/mo</small></div>
       <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
     </div>
 
