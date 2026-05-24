@@ -38,23 +38,31 @@ body { overflow-x: hidden; line-height: 1.5; }
 a { color: inherit; text-decoration: none; }
 ::selection { background: var(--accent); color: var(--cream); }
 
-/* NAV (sits over hero, dark glass) */
-nav.top { position: absolute; top: 0; left: 0; right: 0; z-index: 50; background: transparent; }
-nav.top .inner { max-width: 1440px; margin: 0 auto; padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-nav.top .logo { display: flex; align-items: center; gap: 14px; color: var(--cream); }
-nav.top .logo img { height: 64px; width: auto; object-fit: contain; filter: brightness(0) invert(1); transition: transform 0.3s; }
+/* NAV (sticky, scroll-aware) */
+nav.top { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: transparent; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; }
+nav.top.scrolled { background: var(--cream); border-bottom: 1px solid var(--line); box-shadow: 0 4px 24px rgba(0,0,0,0.05); }
+nav.top .inner { max-width: 1440px; margin: 0 auto; padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+nav.top .logo { display: flex; align-items: center; gap: 14px; color: var(--cream); transition: color 0.3s; }
+nav.top .logo img { height: 56px; width: auto; object-fit: contain; filter: brightness(0) invert(1); transition: transform 0.3s, filter 0.3s; }
+nav.top.scrolled .logo img { filter: none; }
 nav.top .logo:hover img { transform: scale(1.04); }
+nav.top .logo .name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; letter-spacing: 0.01em; color: var(--cream); transition: color 0.3s; }
+nav.top.scrolled .logo .name { color: var(--burgundy); }
 
-nav.top .links { display: flex; gap: 36px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: var(--cream); }
-nav.top .links a { color: rgba(249, 248, 245, 0.85); padding-bottom: 3px; transition: color 0.2s; }
+nav.top .links { display: flex; gap: 36px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; }
+nav.top .links a { color: rgba(249, 248, 245, 0.85); padding-bottom: 3px; transition: color 0.3s; }
 nav.top .links a:hover { color: var(--cream); }
-nav.top .cta { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; padding: 11px 22px; border-radius: 999px; border: 1px solid rgba(249, 248, 245, 0.55); color: var(--cream); background: transparent; transition: background 0.25s, color 0.25s, border-color 0.25s; cursor: pointer; }
-nav.top .cta:hover { background: var(--cream); color: var(--burgundy); border-color: var(--cream); }
-nav.top .nav-toggle { display: none; width: 44px; height: 44px; background: transparent; border: 1px solid rgba(249, 248, 245, 0.55); border-radius: 999px; cursor: pointer; padding: 0; align-items: center; justify-content: center; flex-direction: column; gap: 4px; }
-nav.top .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--cream); transition: transform 0.25s, opacity 0.25s; }
+nav.top.scrolled .links a { color: var(--burgundy); }
+nav.top.scrolled .links a:hover { color: var(--accent); }
+
+nav.top .nav-toggle { display: none; width: 44px; height: 44px; background: transparent; border: 1px solid rgba(249, 248, 245, 0.55); border-radius: 999px; cursor: pointer; padding: 0; align-items: center; justify-content: center; flex-direction: column; gap: 4px; transition: border-color 0.3s; }
+nav.top.scrolled .nav-toggle { border-color: var(--burgundy); }
+nav.top .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--cream); transition: transform 0.25s, opacity 0.25s, background 0.3s; }
+nav.top.scrolled .nav-toggle span { background: var(--burgundy); }
 body.menu-open nav.top .nav-toggle span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
 body.menu-open nav.top .nav-toggle span:nth-child(2) { opacity: 0; }
 body.menu-open nav.top .nav-toggle span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
 nav.top .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--burgundy); padding: 110px 28px 48px; flex-direction: column; gap: 28px; z-index: 49; }
 nav.top .mobile-menu a { font-family: 'Fraunces', serif; font-weight: 500; font-size: 28px; color: var(--cream); letter-spacing: -0.02em; }
 nav.top .mobile-menu .mobile-wa { margin-top: auto; padding: 18px 24px; background: var(--cream); color: var(--burgundy); border-radius: 999px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; text-align: center; letter-spacing: 0; }
@@ -134,12 +142,12 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 72px 48px; }
 .work-link a { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; padding: 16px 30px; border-radius: 999px; border: 1px solid var(--fg); transition: background 0.25s, color 0.25s, transform 0.2s; }
 .work-link a:hover { background: var(--fg); color: var(--cream); transform: translateY(-2px); }
 
-/* TESTIMONIAL */
-.testi { padding: 64px 48px; max-width: 1440px; margin: 0 auto; }
-.testi-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
-.testi .num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.24em; color: var(--accent); margin-bottom: 36px; text-transform: uppercase; }
-.testi blockquote { font-family: 'Fraunces', serif; font-weight: 400; font-style: italic; font-size: clamp(26px, 3.4vw, 44px); line-height: 1.22; letter-spacing: -0.02em; color: var(--fg); margin-bottom: 36px; }
-.testi cite { font-family: 'DM Mono', monospace; font-size: 11px; font-style: normal; letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-soft); display: block; }
+/* REVIEWS (testimonial) */
+.testi-block { background: var(--cream-warm); padding: 72px 48px; }
+.testi-inner { max-width: 1440px; margin: 0 auto; }
+.testi-body { padding-left: 0; max-width: 900px; margin-left: 220px; }
+.testi-body blockquote { font-family: 'Fraunces', serif; font-weight: 400; font-style: italic; font-size: clamp(26px, 3.4vw, 42px); line-height: 1.22; letter-spacing: -0.02em; color: var(--fg); margin-bottom: 28px; }
+.testi-body cite { font-family: 'DM Mono', monospace; font-size: 11px; font-style: normal; letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-soft); display: block; }
 
 /* CTA, cinematic full bleed */
 .end-cta { background: var(--burgundy); color: var(--cream); padding: 88px 48px; text-align: center; }
@@ -155,7 +163,7 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 72px 48px; }
 /* FOOTER */
 footer { background: var(--cream); border-top: 1px solid var(--line); padding: 48px 48px 24px; }
 footer .foot-inner { max-width: 1440px; margin: 0 auto; }
-footer .foot-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; }
+footer .foot-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 40px; }
 footer .brand img { height: 32px; margin-bottom: 16px; }
 footer .brand h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; color: var(--fg); margin-bottom: 14px; max-width: 360px; }
 footer .brand p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; color: var(--fg-soft); max-width: 360px; }
@@ -206,11 +214,14 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 
 
 @media (max-width: 980px) {
-  nav.top .links, nav.top .cta { display: none; }
+  nav.top .links { display: none; }
+  nav.top .logo .name { display: none; }
   nav.top .nav-toggle { display: flex; }
   .svc-list { grid-template-columns: repeat(2, 1fr); }
   .packages { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: repeat(2, 1fr); }
+  .testi-body { margin-left: 0; }
+  .testi-block { padding: 56px 24px; }
 }
 @media (max-width: 640px) {
   .stats-inner { grid-template-columns: 1fr; gap: 20px; }
@@ -238,6 +249,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
     <div class="inner">
       <a class="logo" href="#top" aria-label="BRND OUT LOUD home">
         <img src="assets/logo.png" alt="BRND OUT LOUD" />
+        <span class="name">BRND OUT LOUD</span>
       </a>
       <div class="links">
         <a href="#services">Services</a>
@@ -245,7 +257,6 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
         <a href="work.html">Work</a>
         <a href="#contact">Contact</a>
       </div>
-      <a href="https://wa.me/971504898439" target="_blank" rel="noopener" class="cta">WhatsApp us</a>
       <button class="nav-toggle" aria-label="Open menu" onclick="document.body.classList.toggle('menu-open')">
         <span></span><span></span><span></span>
       </button>
@@ -393,12 +404,17 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 
 
 
-<!-- TESTIMONIAL -->
-<section class="testi">
+<!-- REVIEWS -->
+<section class="testi-block" id="reviews">
   <div class="testi-inner">
-    <div class="num">04 / In their words</div>
-    <blockquote id="testi-quote">We came in with a list of fonts. We left with a point of view. Six weeks later we were getting messages from people who had never bought a thing from us, just to say the brand made them stop scrolling.</blockquote>
-    <cite id="testi-cite">Marisol Vega · Founder, Maestra</cite>
+    <div class="section-head">
+      <div class="num">04 / Reviews</div>
+      <h2>What clients <em>say.</em></h2>
+    </div>
+    <div class="testi-body">
+      <blockquote id="testi-quote">We came in with a list of fonts. We left with a point of view. Six weeks later we were getting messages from people who had never bought a thing from us, just to say the brand made them stop scrolling.</blockquote>
+      <cite id="testi-cite">Marisol Vega · Founder, Maestra</cite>
+    </div>
   </div>
 </section>
 
@@ -437,13 +453,6 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
           <li><a href="mailto:hi@brndoutloud.com">hi@brndoutloud.com</a></li>
           <li><a href="https://www.instagram.com/brndoutloud" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="https://brndoutloud.co">brndoutloud.co</a></li>
-        </ul>
-      </div>
-      <div class="col">
-        <h4>Office</h4>
-        <ul>
-          <li><span>Worldwide · Remote</span></li>
-
         </ul>
       </div>
     </div>
@@ -486,6 +495,15 @@ const io = new IntersectionObserver(es => {
   es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.08 });
 ro.forEach(e => io.observe(e));
+
+// Sticky nav scroll-aware
+const navEl = document.querySelector('nav.top');
+const setNavState = () => {
+  if (window.scrollY > 80) navEl.classList.add('scrolled');
+  else navEl.classList.remove('scrolled');
+};
+window.addEventListener('scroll', setNavState, { passive: true });
+setNavState();
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
