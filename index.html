@@ -3,356 +3,201 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BRND OUT LOUD — A loud creative agency.</title>
-<meta name="description" content="A full-service creative studio for founders who refuse to blend in. Branding, design, social and websites — built loud, on purpose." />
+<title>BRND OUT LOUD — A creative studio.</title>
+<meta name="description" content="A creative studio for brands worth remembering. Branding, design, social and websites in one room." />
 <link rel="icon" type="image/png" href="assets/logo.png" />
-<meta property="og:title" content="BRND OUT LOUD — A loud creative agency." />
-<meta property="og:description" content="A full-service creative studio for founders who refuse to blend in." />
-<meta property="og:image" content="assets/logo.png" />
+<meta property="og:title" content="BRND OUT LOUD — A creative studio." />
+<meta property="og:description" content="A creative studio for brands worth remembering." />
+<meta property="og:image" content="assets/hero.png" />
 <meta property="og:url" content="https://brndoutloud.co" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <style>
-  :root {
-    --coral: #EA4744;
-    --coral-soft: #f0796a;
-    --cream: #F9F8F5;
-    --cream-warm: #f1ede0;
-    --burgundy: #6C062B;
-    --burgundy-deep: #4e0220;
-    --pink: #F27B9A;
-    --ink: #1a0a10;
-    --ink-soft: rgba(26, 10, 16, 0.62);
-    --line: rgba(108, 6, 43, 0.16);
+:root {
+  --coral: #EA4744;
+  --cream: #F9F8F5;
+  --cream-warm: #f1ede0;
+  --burgundy: #6C062B;
+  --pink: #F27B9A;
+  --ink-soft: rgba(26, 10, 16, 0.62);
+  --line: rgba(108, 6, 43, 0.12);
+  --bg: var(--cream);
+  --fg: var(--burgundy);
+  --fg-soft: var(--ink-soft);
+  --accent: var(--coral);
+}
 
-    /* mode is set on body via data-mode */
-    --bg: var(--cream);
-    --fg: var(--burgundy);
-    --fg-soft: var(--ink-soft);
-    --accent: var(--coral);
-    --accent2: var(--pink);
-  }
-  body[data-mode="dark"] {
-    --bg: var(--burgundy);
-    --fg: var(--cream);
-    --fg-soft: rgba(249,248,245,0.7);
-    --accent: var(--pink);
-    --accent2: var(--coral);
-    --line: rgba(249,248,245,0.18);
-  }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--fg); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+body { overflow-x: hidden; line-height: 1.5; }
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--accent); color: var(--cream); }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { background: var(--bg); color: var(--fg); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; transition: background 0.5s ease, color 0.5s ease; }
-  body { overflow-x: hidden; }
-  a { color: inherit; text-decoration: none; }
-  ::selection { background: var(--accent); color: var(--cream); }
+/* NAV */
+nav.top { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--line); }
+nav.top .inner { max-width: 1320px; margin: 0 auto; padding: 22px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+nav.top .logo { display: flex; align-items: center; gap: 14px; }
+nav.top .logo img { height: 34px; width: 34px; object-fit: contain; }
+nav.top .logo .name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 15px; letter-spacing: 0.02em; color: var(--fg); }
+nav.top .links { display: flex; gap: 36px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; }
+nav.top .links a { padding-bottom: 3px; transition: color 0.2s; }
+nav.top .links a:hover { color: var(--accent); }
+nav.top .cta { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; padding: 11px 22px; border-radius: 999px; border: 1px solid var(--fg); color: var(--fg); background: transparent; transition: background 0.25s, color 0.25s; cursor: pointer; }
+nav.top .cta:hover { background: var(--fg); color: var(--cream); }
 
-  /* TICKER */
-  .ticker { background: var(--accent); color: var(--cream); overflow: hidden; border-bottom: 1px solid rgba(0,0,0,0.05); }
-  body[data-mode="dark"] .ticker { color: var(--burgundy); }
-  .ticker-track { display: flex; gap: 48px; padding: 11px 0; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; white-space: nowrap; animation: scroll 38s linear infinite; }
-  .ticker-track span { display: inline-flex; align-items: center; gap: 12px; }
-  .ticker-track .star { font-family: 'Fraunces', serif; font-style: italic; text-transform: none; letter-spacing: 0; font-size: 14px; }
-  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* HERO */
+.hero { max-width: 1320px; margin: 0 auto; padding: 80px 48px 64px; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+.hero .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; display: inline-flex; align-items: center; gap: 14px; }
+.hero .eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--accent); }
+.hero h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(44px, 5.4vw, 82px); line-height: 1.02; letter-spacing: -0.025em; color: var(--fg); margin-bottom: 24px; }
+.hero h1 em { font-style: italic; font-weight: 400; }
+.hero p.lead { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 17px; line-height: 1.55; color: var(--fg-soft); max-width: 440px; margin-bottom: 32px; }
+.hero .row { display: flex; gap: 14px; align-items: center; }
+.hero .row .primary { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 26px; border-radius: 999px; background: var(--fg); color: var(--cream); transition: transform 0.2s; }
+.hero .row .primary:hover { transform: translateY(-2px); }
+.hero .row .secondary { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 8px; transition: color 0.2s; }
+.hero .row .secondary:hover { color: var(--accent); }
+.hero-img { width: 100%; aspect-ratio: 3/2; border-radius: 16px; overflow: hidden; background: var(--cream-warm); }
+.hero-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  /* NAV */
-  nav.top { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--line); transition: background 0.5s; }
-  nav.top .inner { max-width: 1440px; margin: 0 auto; padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-  nav.top .logo { display: flex; align-items: center; gap: 12px; }
-  nav.top .logo img { height: 44px; width: 44px; object-fit: contain; }
-  nav.top .logo .name { font-family: 'Fraunces', serif; font-weight: 800; font-size: 18px; letter-spacing: -0.01em; color: var(--fg); line-height: 1; }
-  nav.top .logo .name em { font-style: normal; color: var(--accent); }
-  nav.top .links { display: flex; gap: 36px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
-  nav.top .links a { position: relative; padding-bottom: 4px; transition: color 0.2s; cursor: pointer; }
-  nav.top .links a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-  nav.top .links a:hover { color: var(--accent); }
-  nav.top .links a:hover::after { transform: scaleX(1); }
-  nav.top .cta { background: var(--accent); color: var(--cream); padding: 12px 22px; border-radius: 999px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; transition: transform 0.2s, background 0.3s; cursor: pointer; border: none; }
-  body[data-mode="dark"] nav.top .cta { color: var(--burgundy); }
-  nav.top .cta:hover { transform: translateY(-2px) rotate(-1deg); }
+/* META STRIP */
+.hero-meta { max-width: 1320px; margin: 0 auto; padding: 0 48px 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; border-bottom: 1px solid var(--line); }
+.hero-meta div { display: flex; flex-direction: column; gap: 8px; padding-bottom: 16px; }
+.hero-meta strong { font-family: 'Fraunces', serif; font-weight: 600; font-size: 30px; color: var(--fg); line-height: 1; letter-spacing: -0.02em; }
+.hero-meta span { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-soft); }
 
-  /* HERO */
-  .hero { max-width: 1440px; margin: 0 auto; padding: 80px 48px 64px; position: relative; }
-  .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: end; }
-  .hero .eyebrow { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 32px; display: inline-flex; align-items: center; gap: 14px; }
-  .hero .eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--accent); }
-  .hero h1 { font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(72px, 12vw, 200px); line-height: 0.85; letter-spacing: -0.045em; color: var(--fg); }
-  .hero h1 .em { color: var(--accent); font-style: italic; font-weight: 700; }
-  .hero h1 .swoop { display: inline-block; transform: rotate(-3deg); }
-  .hero .underline { display: inline-block; position: relative; }
-  .hero .underline::after { content: ''; position: absolute; left: -2%; right: -2%; bottom: 8%; height: 14%; background: var(--accent2); z-index: -1; border-radius: 6px; }
-  .hero .logo-mark { width: 200px; height: 200px; flex-shrink: 0; }
-  .hero .logo-mark img { width: 100%; height: 100%; object-fit: contain; animation: gentleSpin 18s ease-in-out infinite; }
-  @keyframes gentleSpin { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
-  .hero .sub-row { display: flex; justify-content: space-between; align-items: end; gap: 48px; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
-  .hero .tag { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: clamp(22px, 2.4vw, 32px); color: var(--fg); max-width: 560px; line-height: 1.25; }
-  .hero .tag em { color: var(--accent); }
-  .hero .meta { display: flex; gap: 32px; }
-  .hero .meta div { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-soft); border-left: 2px solid var(--accent); padding-left: 12px; }
-  .hero .meta div strong { display: block; color: var(--fg); font-size: 13px; margin-bottom: 4px; font-weight: 600; font-family: 'Inter', sans-serif; letter-spacing: 0.05em; }
+/* SECTIONS */
+section.block { max-width: 1320px; margin: 0 auto; padding: 88px 48px; }
+.section-head { display: grid; grid-template-columns: 200px 1fr; gap: 56px; align-items: start; margin-bottom: 48px; }
+.section-head .num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.24em; color: var(--accent); padding-top: 12px; text-transform: uppercase; }
+.section-head h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(34px, 4.4vw, 60px); line-height: 1.05; letter-spacing: -0.025em; color: var(--fg); max-width: 760px; }
+.section-head h2 em { font-style: italic; font-weight: 400; }
 
-  /* MARQUEE BIG */
-  .marquee-big { background: var(--accent); color: var(--cream); padding: 18px 0; overflow: hidden; transform: rotate(-1.4deg); margin: 24px -2%; box-shadow: 0 18px 40px -20px rgba(108,6,43,0.4); }
-  body[data-mode="dark"] .marquee-big { color: var(--burgundy); }
-  .marquee-big-track { display: flex; gap: 56px; white-space: nowrap; animation: scroll 30s linear infinite; }
-  .marquee-big-track span { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(28px, 4vw, 56px); letter-spacing: -0.02em; line-height: 1; display: inline-flex; align-items: center; gap: 32px; }
-  .marquee-big-track .dot { width: 12px; height: 12px; background: currentColor; border-radius: 50%; display: inline-block; }
-  .marquee-big-track .star { font-style: italic; font-weight: 600; }
+/* MANIFESTO — quiet editorial block */
+.manifesto-wrap { max-width: 1100px; margin: 32px auto; padding: 56px 48px; text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.manifesto-wrap blockquote { font-family: 'Fraunces', serif; font-weight: 400; font-style: italic; font-size: clamp(26px, 3.2vw, 42px); line-height: 1.22; letter-spacing: -0.018em; color: var(--fg); }
+.manifesto-wrap blockquote em { font-style: italic; color: var(--accent); font-weight: 500; }
+.manifesto-wrap cite { display: block; font-style: normal; margin-top: 24px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-soft); }
 
-  /* SECTION */
-  section.block { max-width: 1440px; margin: 0 auto; padding: 96px 48px; }
-  .section-head { display: grid; grid-template-columns: auto 1fr auto; gap: 48px; align-items: end; margin-bottom: 56px; }
-  .section-head .num { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.22em; color: var(--accent); padding-top: 8px; }
-  .section-head h2 { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(48px, 6.5vw, 96px); line-height: 0.9; letter-spacing: -0.035em; color: var(--fg); }
-  .section-head h2 em { color: var(--accent); font-style: italic; font-weight: 600; }
-  .section-head .aside { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.5; color: var(--fg-soft); max-width: 280px; }
+/* SERVICES */
+.services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.service-card { background: var(--bg); padding: 44px 40px; transition: background 0.3s; }
+.service-card:hover { background: var(--cream-warm); }
+.service-card .num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--accent); margin-bottom: 22px; text-transform: uppercase; }
+.service-card h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 30px; letter-spacing: -0.02em; margin-bottom: 12px; color: var(--fg); }
+.service-card p { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.55; color: var(--fg-soft); max-width: 420px; margin-bottom: 20px; }
+.service-card ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.service-card ul li { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--fg-soft); }
 
-  /* MANIFESTO */
-  .manifesto { background: var(--burgundy); color: var(--cream); padding: 96px 48px; margin: 64px -2% 0; transform: rotate(0.6deg); box-shadow: 0 30px 80px -30px rgba(108,6,43,0.5); border-radius: 24px; }
-  body[data-mode="dark"] .manifesto { background: var(--cream); color: var(--burgundy); }
-  .manifesto-inner { max-width: 1200px; margin: 0 auto; transform: rotate(-0.6deg); }
-  .manifesto .quote-mark { font-family: 'Fraunces', serif; font-size: 200px; line-height: 0.5; color: var(--pink); display: block; height: 80px; }
-  body[data-mode="dark"] .manifesto .quote-mark { color: var(--coral); }
-  .manifesto blockquote { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(34px, 4.4vw, 64px); line-height: 1.05; letter-spacing: -0.025em; }
-  .manifesto blockquote em { color: var(--pink); font-style: italic; font-weight: 600; }
-  body[data-mode="dark"] .manifesto blockquote em { color: var(--coral); }
-  .manifesto .attr { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-top: 28px; display: flex; align-items: center; gap: 14px; }
-  body[data-mode="dark"] .manifesto .attr { color: var(--coral); }
-  .manifesto .attr::before { content: ''; width: 36px; height: 1px; background: currentColor; }
+/* WORK */
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.work-tile { aspect-ratio: 4/5; border-radius: 12px; overflow: hidden; background: var(--cream-warm); position: relative; cursor: pointer; transition: transform 0.4s; display: block; }
+.work-tile:hover { transform: translateY(-3px); }
+.work-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.work-tile:hover img { transform: scale(1.03); }
+.work-tile .label { position: absolute; left: 14px; right: 14px; bottom: 14px; background: var(--cream); border-radius: 9px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: flex-end; }
+.work-tile .label .name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 17px; color: var(--fg); letter-spacing: -0.015em; line-height: 1.1; }
+.work-tile .label .meta { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-top: 4px; }
+.work-tile .label .yr { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--fg-soft); }
+.work-link { display: flex; justify-content: center; margin-top: 48px; }
+.work-link a { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 26px; border-radius: 999px; border: 1px solid var(--fg); transition: background 0.25s, color 0.25s; }
+.work-link a:hover { background: var(--fg); color: var(--cream); }
 
-  /* SERVICES */
-  .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .service-card { padding: 40px 36px 36px; border-radius: 22px; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; transition: transform 0.4s cubic-bezier(.2,.8,.2,1); cursor: pointer; }
-  .service-card:hover { transform: translateY(-6px); }
-  .service-card .top { display: flex; justify-content: space-between; align-items: flex-start; }
-  .service-card .num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; opacity: 0.7; }
-  .service-card .arrow { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid currentColor; transition: transform 0.3s, background 0.3s; }
-  .service-card:hover .arrow { transform: rotate(-45deg) scale(1.08); }
-  .service-card .arrow svg { width: 18px; height: 18px; }
-  .service-card h3 { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(38px, 4.2vw, 56px); line-height: 0.95; letter-spacing: -0.02em; margin: 36px 0 14px; }
-  .service-card p { font-size: 14px; line-height: 1.55; opacity: 0.85; max-width: 360px; }
-  .service-card ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-  .service-card ul li { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 12px; border: 1px solid currentColor; border-radius: 999px; opacity: 0.75; }
-  .s1 { background: var(--coral); color: var(--cream); }
-  .s2 { background: var(--burgundy); color: var(--cream); }
-  .s3 { background: var(--pink); color: var(--burgundy); }
-  .s4 { background: var(--cream); color: var(--burgundy); border: 1px solid var(--line); }
-  body[data-mode="dark"] .s4 { background: rgba(249,248,245,0.06); color: var(--cream); border: 1px solid var(--line); }
-  body[data-mode="dark"] .s2 { background: rgba(249,248,245,0.06); color: var(--cream); }
+/* PROCESS */
+.process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding-top: 24px; }
+.process-step { padding: 0 8px 0 24px; border-left: 1px solid var(--line); }
+.process-step .pnum { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--accent); margin-bottom: 18px; }
+.process-step h4 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px; margin-bottom: 10px; letter-spacing: -0.015em; }
+.process-step p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.55; color: var(--fg-soft); }
 
-  /* WORK TEASER (home) */
-  .work-teaser-card { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; padding: 56px; border-radius: 24px; background: var(--burgundy); color: var(--cream); align-items: center; transition: transform 0.4s cubic-bezier(.2,.8,.2,1); cursor: pointer; }
-  body[data-mode="dark"] .work-teaser-card { background: var(--cream); color: var(--burgundy); }
-  .work-teaser-card:hover { transform: translateY(-4px); }
-  .work-teaser-card .num { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.22em; color: var(--pink); margin-bottom: 24px; text-transform: uppercase; }
-  body[data-mode="dark"] .work-teaser-card .num { color: var(--coral); }
-  .work-teaser-card h2 { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(44px, 5.4vw, 80px); line-height: 0.9; letter-spacing: -0.035em; margin-bottom: 20px; }
-  .work-teaser-card h2 em { color: var(--pink); font-style: italic; font-weight: 600; }
-  body[data-mode="dark"] .work-teaser-card h2 em { color: var(--coral); }
-  .work-teaser-card p { font-size: 15px; line-height: 1.55; max-width: 440px; opacity: 0.85; margin-bottom: 32px; }
-  .work-teaser-card .wt-cta { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 12px; padding: 16px 24px; border: 1.5px solid currentColor; border-radius: 999px; transition: background 0.3s, color 0.3s; }
-  .work-teaser-card .wt-cta svg { width: 16px; height: 16px; transition: transform 0.3s; }
-  .work-teaser-card:hover .wt-cta { background: var(--pink); border-color: var(--pink); color: var(--burgundy); }
-  body[data-mode="dark"] .work-teaser-card:hover .wt-cta { background: var(--coral); border-color: var(--coral); color: var(--cream); }
-  .work-teaser-card:hover .wt-cta svg { transform: translateX(6px); }
-  .wt-right { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .wt-tile { aspect-ratio: 1/1; border-radius: 14px; display: flex; align-items: flex-end; padding: 18px; font-family: 'Fraunces', serif; font-weight: 800; font-size: 22px; line-height: 1; letter-spacing: -0.02em; transition: transform 0.4s; }
-  .work-teaser-card:hover .wt-tile { transform: scale(0.97); }
-  .work-teaser-card:hover .wt-tile:hover { transform: scale(1.04); }
-  .wt-tile.t1 { background: var(--coral); color: var(--cream); transform: rotate(-2deg); }
-  .wt-tile.t2 { background: var(--cream); color: var(--burgundy); transform: rotate(1.5deg); }
-  .wt-tile.t3 { background: var(--pink); color: var(--burgundy); transform: rotate(2deg); }
-  .wt-tile.t4 { background: var(--burgundy-deep); color: var(--pink); transform: rotate(-1.5deg); border: 1px solid var(--pink); }
-  body[data-mode="dark"] .wt-tile.t2 { background: var(--burgundy); color: var(--cream); }
-  body[data-mode="dark"] .wt-tile.t4 { background: var(--cream-warm); color: var(--burgundy); border: 1px solid var(--burgundy); }
-  @media (max-width: 1100px) {
-    .work-teaser-card { grid-template-columns: 1fr; padding: 36px; gap: 32px; }
-  }
+/* FOUNDERS */
+.founders { display: grid; grid-template-columns: repeat(2, 1fr); gap: 56px; padding-top: 8px; }
+.founder .role { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--accent); margin-bottom: 18px; text-transform: uppercase; }
+.founder .name { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(40px, 4.4vw, 64px); line-height: 1; letter-spacing: -0.025em; color: var(--fg); margin-bottom: 20px; }
+.founder .bio { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.55; color: var(--fg-soft); margin-bottom: 18px; max-width: 460px; }
+.founder .quote { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 17px; line-height: 1.35; color: var(--burgundy); border-top: 1px solid var(--line); padding-top: 16px; max-width: 420px; }
 
-  /* WORK (used on work.html) */
-  .work-feed { display: grid; grid-template-columns: 7fr 5fr; gap: 24px; }
-  .work-card { position: relative; border-radius: 18px; overflow: hidden; background: var(--cream-warm); cursor: pointer; transition: transform 0.5s cubic-bezier(.2,.8,.2,1); }
-  body[data-mode="dark"] .work-card { background: rgba(249,248,245,0.06); }
-  .work-card:hover { transform: translateY(-4px); }
-  .work-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.7s ease; }
-  .work-card:hover img { transform: scale(1.025); }
-  .work-card .label { position: absolute; left: 24px; right: 24px; bottom: 24px; display: flex; justify-content: space-between; align-items: flex-end; background: var(--cream); border-radius: 14px; padding: 16px 20px; box-shadow: 0 12px 30px -12px rgba(0,0,0,0.2); }
-  .work-card .label .name { font-family: 'Fraunces', serif; font-weight: 800; font-size: 22px; letter-spacing: -0.02em; color: var(--burgundy); }
-  .work-card .label .meta { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral); margin-top: 2px; }
-  .work-card .label .yr { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; color: var(--burgundy); opacity: 0.55; align-self: flex-start; }
-  .work-row { display: grid; gap: 24px; margin-top: 24px; }
-  .work-row.three { grid-template-columns: repeat(3, 1fr); }
-  .work-row .work-card { aspect-ratio: 4/5; }
-  .work-feed .big { aspect-ratio: 4/3.2; }
-  .work-feed .small { display: grid; gap: 24px; grid-template-rows: 1fr 1fr; }
-  .work-feed .small .work-card { aspect-ratio: auto; }
-  .work-cta { display: flex; justify-content: center; margin-top: 56px; }
-  .work-cta a { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; padding: 18px 32px; border: 1.5px solid var(--fg); border-radius: 999px; display: inline-flex; align-items: center; gap: 14px; transition: background 0.3s, color 0.3s, transform 0.2s; cursor: pointer; }
-  .work-cta a:hover { background: var(--accent); border-color: var(--accent); color: var(--cream); transform: translateY(-2px); }
-  body[data-mode="dark"] .work-cta a:hover { color: var(--burgundy); }
-  .work-cta svg { width: 16px; height: 16px; }
+/* TESTIMONIAL */
+.testi { background: var(--cream-warm); padding: 88px 48px; }
+.testi-inner { max-width: 1100px; margin: 0 auto; }
+.testi blockquote { font-family: 'Fraunces', serif; font-weight: 400; font-style: italic; font-size: clamp(22px, 2.8vw, 36px); line-height: 1.28; letter-spacing: -0.015em; color: var(--fg); margin-bottom: 28px; }
+.testi cite { font-family: 'DM Mono', monospace; font-size: 11px; font-style: normal; letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-soft); display: block; }
 
-  /* PROCESS */
-  .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .process-step { padding: 48px 32px 56px; border-right: 1px solid var(--line); position: relative; transition: background 0.3s; cursor: default; }
-  .process-step:last-child { border-right: none; }
-  .process-step:hover { background: var(--accent); color: var(--cream); }
-  body[data-mode="dark"] .process-step:hover { color: var(--burgundy); }
-  .process-step .pnum { font-family: 'Fraunces', serif; font-weight: 800; font-style: italic; font-size: 84px; line-height: 1; color: var(--accent); opacity: 0.6; transition: opacity 0.3s, color 0.3s; }
-  .process-step:hover .pnum { color: var(--cream); opacity: 1; }
-  body[data-mode="dark"] .process-step:hover .pnum { color: var(--burgundy); }
-  .process-step h4 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 28px; letter-spacing: -0.02em; margin: 32px 0 12px; }
-  .process-step p { font-size: 13px; line-height: 1.55; color: var(--fg-soft); transition: color 0.3s; }
-  .process-step:hover p { color: inherit; opacity: 0.85; }
+/* CTA */
+.end-cta { max-width: 1320px; margin: 0 auto; padding: 96px 48px; text-align: center; }
+.end-cta h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(46px, 6vw, 84px); line-height: 1; letter-spacing: -0.025em; margin-bottom: 18px; }
+.end-cta h2 em { font-style: italic; font-weight: 400; color: var(--accent); }
+.end-cta p { font-family: 'Inter', sans-serif; font-size: 16px; color: var(--fg-soft); margin-bottom: 36px; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.55; }
+.end-cta .row { display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.end-cta .primary { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; padding: 16px 28px; border-radius: 999px; background: var(--fg); color: var(--cream); transition: transform 0.2s; }
+.end-cta .primary:hover { transform: translateY(-2px); }
+.end-cta .secondary { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; padding: 16px 12px; color: var(--fg); transition: color 0.2s; }
+.end-cta .secondary:hover { color: var(--accent); }
 
-  /* FOUNDERS (typographic) */
-  .founders-grid-typo { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .founder-typo { padding: 56px 44px; border-radius: 24px; background: var(--cream-warm); position: relative; display: flex; flex-direction: column; gap: 24px; min-height: 420px; transition: transform 0.4s cubic-bezier(.2,.8,.2,1); }
-  body[data-mode="dark"] .founder-typo { background: rgba(249,248,245,0.06); }
-  .founder-typo.dark { background: var(--burgundy); color: var(--cream); }
-  body[data-mode="dark"] .founder-typo.dark { background: var(--coral); color: var(--cream); }
-  .founder-typo:hover { transform: translateY(-4px); }
-  .founder-typo .f-role { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
-  .founder-typo.dark .f-role { color: var(--pink); }
-  body[data-mode="dark"] .founder-typo.dark .f-role { color: var(--cream); opacity: 0.85; }
-  .founder-typo .f-name { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(64px, 7vw, 104px); line-height: 0.88; letter-spacing: -0.04em; margin-top: auto; }
-  .founder-typo.dark .f-name em { color: var(--pink); }
-  .founder-typo .f-bio { font-size: 14px; line-height: 1.55; opacity: 0.75; max-width: 360px; }
-  .founder-typo .f-quote { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 22px; line-height: 1.25; color: var(--accent); padding-top: 20px; border-top: 1px solid var(--line); }
-  .founder-typo.dark .f-quote { color: var(--pink); border-top: 1px solid rgba(249,248,245,0.2); }
-  body[data-mode="dark"] .founder-typo.dark .f-quote { color: var(--cream); border-top: 1px solid rgba(249,248,245,0.3); }
+/* FOOTER */
+footer { background: var(--cream); border-top: 1px solid var(--line); padding: 56px 48px 24px; }
+footer .foot-inner { max-width: 1320px; margin: 0 auto; }
+footer .foot-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; padding-bottom: 48px; }
+footer .brand img { height: 30px; }
+footer .brand h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px; line-height: 1.2; letter-spacing: -0.02em; color: var(--fg); margin: 14px 0 12px; max-width: 320px; }
+footer .brand p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.55; color: var(--fg-soft); max-width: 320px; }
+footer .col h4 { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-soft); margin-bottom: 18px; }
+footer .col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+footer .col ul a, footer .col ul span { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--fg); transition: color 0.2s; }
+footer .col ul a:hover { color: var(--accent); }
+footer .foot-bottom { padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-soft); gap: 24px; flex-wrap: wrap; }
+footer .foot-bottom .tagline { font-family: 'Fraunces', serif; font-style: italic; text-transform: none; letter-spacing: 0; font-size: 14px; }
 
-  /* FOUNDERS (legacy w/ images) */
-  .founders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-  .founder-card { position: relative; }
-  .founder-card .img-wrap { aspect-ratio: 4/5; border-radius: 18px; overflow: hidden; background: var(--cream-warm); position: relative; }
-  body[data-mode="dark"] .founder-card .img-wrap { background: rgba(249,248,245,0.06); }
-  .founder-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
-  .founder-card:hover .img-wrap img { transform: scale(1.03); }
-  .founder-card .badge { position: absolute; top: 20px; left: 20px; background: var(--accent); color: var(--cream); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; padding: 8px 14px; border-radius: 999px; }
-  body[data-mode="dark"] .founder-card .badge { color: var(--burgundy); }
-  .founder-card .info { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-top: 24px; }
-  .founder-card .name { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(34px, 3.4vw, 48px); line-height: 0.95; letter-spacing: -0.025em; }
-  .founder-card .role { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-top: 8px; }
-  .founder-card .quote { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 16px; color: var(--fg-soft); max-width: 240px; text-align: right; line-height: 1.35; }
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-meta { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .section-head { grid-template-columns: 1fr; gap: 16px; }
+  .services { grid-template-columns: 1fr; }
+  .work-grid { grid-template-columns: 1fr 1fr; }
+  .process { grid-template-columns: 1fr 1fr; }
+  .founders { grid-template-columns: 1fr; gap: 48px; }
+  footer .foot-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  nav.top .links { display: none; }
+}
+@media (max-width: 640px) {
+  .hero { padding: 48px 24px 24px; }
+  .hero-meta { padding: 0 24px 40px; }
+  section.block { padding: 56px 24px; }
+  .manifesto-wrap { padding: 40px 24px; }
+  .work-grid { grid-template-columns: 1fr; }
+  .process { grid-template-columns: 1fr; }
+  .testi { padding: 56px 24px; }
+  .end-cta { padding: 64px 24px; }
+  footer { padding: 40px 24px 20px; }
+  footer .foot-top { grid-template-columns: 1fr; }
+}
 
-  /* TESTIMONIAL */
-  .testi-wrap { background: var(--pink); color: var(--burgundy); padding: 80px 48px; border-radius: 24px; margin-top: 32px; position: relative; overflow: hidden; }
-  body[data-mode="dark"] .testi-wrap { background: var(--coral); color: var(--cream); }
-  .testi-wrap::before { content: ''; position: absolute; right: -80px; top: -80px; width: 280px; height: 280px; background: var(--coral); border-radius: 50%; opacity: 0.3; }
-  body[data-mode="dark"] .testi-wrap::before { background: var(--pink); }
-  .testi-inner { max-width: 1100px; margin: 0 auto; position: relative; }
-  .testi-inner blockquote { font-family: 'Fraunces', serif; font-weight: 700; font-style: italic; font-size: clamp(28px, 3.4vw, 48px); line-height: 1.1; letter-spacing: -0.02em; }
-  .testi-inner .source { display: flex; gap: 18px; align-items: center; margin-top: 32px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
-  .testi-inner .source .av { width: 44px; height: 44px; border-radius: 50%; background: var(--burgundy); color: var(--pink); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-weight: 800; font-size: 18px; }
-  body[data-mode="dark"] .testi-inner .source .av { background: var(--cream); color: var(--coral); }
-  .testi-inner .source .who strong { display: block; font-family: 'Fraunces', serif; font-style: normal; font-weight: 700; font-size: 16px; letter-spacing: -0.01em; text-transform: none; margin-bottom: 2px; }
-  .testi-nav { display: flex; gap: 10px; margin-top: 40px; }
-  .testi-nav button { width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid var(--burgundy); background: transparent; color: var(--burgundy); cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; }
-  body[data-mode="dark"] .testi-nav button { border-color: var(--cream); color: var(--cream); }
-  .testi-nav button:hover { background: var(--burgundy); color: var(--pink); }
-  body[data-mode="dark"] .testi-nav button:hover { background: var(--cream); color: var(--coral); }
-  .testi-nav button svg { width: 16px; height: 16px; }
-
-  /* CTA BLOCK */
-  .cta-block { padding: 120px 48px; max-width: 1440px; margin: 0 auto; text-align: center; position: relative; }
-  .cta-block .badge { display: inline-flex; align-items: center; gap: 10px; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); padding: 10px 20px; border: 1.5px solid var(--accent); border-radius: 999px; margin-bottom: 36px; }
-  .cta-block .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; animation: pulse 1.6s ease-in-out infinite; }
-  @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.4); opacity: 0.6; } }
-  .cta-block h2 { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(64px, 10vw, 168px); line-height: 0.85; letter-spacing: -0.045em; color: var(--fg); margin-bottom: 32px; }
-  .cta-block h2 em { color: var(--accent); font-style: italic; font-weight: 700; }
-  .cta-block p { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: clamp(20px, 1.8vw, 28px); color: var(--fg-soft); max-width: 640px; margin: 0 auto 56px; line-height: 1.35; }
-  .cta-block .row { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; }
-  .cta-block .primary { background: var(--accent); color: var(--cream); padding: 22px 36px; border-radius: 999px; font-family: 'DM Mono', monospace; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 14px; cursor: pointer; border: none; transition: transform 0.2s; }
-  body[data-mode="dark"] .cta-block .primary { color: var(--burgundy); }
-  .cta-block .primary:hover { transform: translateY(-2px) scale(1.02); }
-  .cta-block .primary svg { width: 18px; height: 18px; }
-  .cta-block .secondary { padding: 22px 30px; font-family: 'DM Mono', monospace; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; }
-  .cta-block .secondary:hover { color: var(--accent); }
-
-  /* FOOTER */
-  footer { background: var(--burgundy); color: var(--cream); padding: 72px 48px 32px; margin-top: 24px; }
-  body[data-mode="dark"] footer { background: var(--cream); color: var(--burgundy); }
-  footer .foot-inner { max-width: 1440px; margin: 0 auto; }
-  footer .foot-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 56px; border-bottom: 1px solid rgba(249,248,245,0.18); }
-  body[data-mode="dark"] footer .foot-top { border-bottom: 1px solid var(--line); }
-  footer .foot-top .brand img { height: 60px; width: 60px; margin-bottom: 24px; }
-  footer .foot-top .brand h3 { font-family: 'Fraunces', serif; font-weight: 800; font-size: 36px; line-height: 0.95; letter-spacing: -0.025em; margin-bottom: 16px; }
-  footer .foot-top .brand h3 em { color: var(--pink); font-style: italic; font-weight: 600; }
-  body[data-mode="dark"] footer .foot-top .brand h3 em { color: var(--coral); }
-  footer .foot-top p { font-size: 13px; line-height: 1.55; opacity: 0.75; max-width: 340px; }
-  footer .col h4 { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6; margin-bottom: 18px; }
-  footer .col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  footer .col ul a { font-family: 'Fraunces', serif; font-size: 18px; transition: color 0.2s; }
-  footer .col ul a:hover { color: var(--pink); }
-  body[data-mode="dark"] footer .col ul a:hover { color: var(--coral); }
-  footer .foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.65; }
-  footer .foot-bottom .star { font-family: 'Fraunces', serif; font-style: italic; text-transform: none; letter-spacing: 0; font-size: 16px; opacity: 1; }
-
-  /* responsive */
-  @media (max-width: 1100px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-    .hero .logo-mark { width: 140px; height: 140px; align-self: flex-start; }
-    .hero .sub-row { flex-direction: column; align-items: flex-start; }
-    .section-head { grid-template-columns: 1fr; gap: 16px; }
-    .section-head .aside { max-width: none; }
-    .services { grid-template-columns: 1fr; }
-    .work-feed { grid-template-columns: 1fr; }
-    .work-feed .big { aspect-ratio: 4/3; }
-    .work-row.three { grid-template-columns: 1fr; }
-    .process { grid-template-columns: 1fr 1fr; }
-    .process-step:nth-child(even) { border-right: none; }
-    .process-step:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-    .founders-grid { grid-template-columns: 1fr; }
-    .founders-grid-typo { grid-template-columns: 1fr; }
-    .founder-typo { padding: 36px 28px; min-height: 0; }
-    footer .foot-top { grid-template-columns: 1fr 1fr; }
-    nav.top .links { display: none; }
-    nav.top .inner { padding: 14px 24px; }
-    .hero, section.block, .cta-block { padding-left: 24px; padding-right: 24px; }
-    .manifesto { padding: 56px 28px; }
-    .founder-card .info { grid-template-columns: 1fr; }
-    .founder-card .quote { text-align: left; max-width: none; }
-  }
-
-  /* Reveal on scroll */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.8,.2,1); }
-  .reveal.in { opacity: 1; transform: translateY(0); }
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.7s, transform 0.7s cubic-bezier(.2,.8,.2,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
 </style>
 </head>
-<body data-mode="light">
+<body>
 
-<script>
-  try {
-    const m = localStorage.getItem('brnd-mode');
-    if (m) document.body.setAttribute('data-mode', m);
-  } catch(e) {}
-</script>
-
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-track" id="ticker-track"></div>
-</div>
-
-<!-- NAV -->
 <nav class="top">
   <div class="inner">
     <a class="logo" href="#top">
       <img src="assets/logo.png" alt="" />
-      <div class="name">BRND OUT<br/><em>LOUD!</em></div>
+      <span class="name">BRND OUT LOUD</span>
     </a>
     <div class="links">
-      <a href="work.html">Work</a>
       <a href="#services">Services</a>
-      <a href="#process">Process</a>
+      <a href="work.html">Work</a>
       <a href="#founders">Studio</a>
       <a href="#contact">Contact</a>
     </div>
-    <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a Brand →</button>
+    <a href="#contact" class="cta">Get in touch</a>
   </div>
 </nav>
 
@@ -360,235 +205,206 @@
 <header class="hero" id="top">
   <div class="hero-grid">
     <div>
-      <div class="eyebrow">A creative agency · est. 2024</div>
-      <h1>
-        We don't<br/>
-        whisper.<br/>
-        <span class="em">We brand</span><br/>
-        <span class="em swoop">out loud.</span>
-      </h1>
+      <div class="eyebrow">A creative studio · est. 2024</div>
+      <h1>A studio for brands worth <em>remembering.</em></h1>
+      <p class="lead">Branding, design, social and websites, under one roof. We work with founders who care about craft.</p>
+      <div class="row">
+        <a href="#work" class="primary">See the work</a>
+        <a href="#contact" class="secondary">Start a project →</a>
+      </div>
     </div>
-    <div class="logo-mark"><img src="assets/logo.png" alt="BRND OUT LOUD logo" /></div>
-  </div>
-  <div class="sub-row">
-    <div class="tag">A full-service studio for <em>founders who refuse to blend in</em>. Branding, design, social, and websites — built loud, on purpose.</div>
-    <div class="meta">
-      <div><strong>10</strong>Active clients</div>
-      <div><strong>4</strong>Disciplines</div>
-      <div><strong>∞</strong>Opinions</div>
+    <div class="hero-img">
+      <img src="assets/hero.png" alt="A composition of brand materials, paper and ink" />
     </div>
   </div>
 </header>
 
-<!-- MARQUEE BIG -->
-<div class="marquee-big">
-  <div class="marquee-big-track" id="marquee-big-track"></div>
+<!-- META STRIP -->
+<div class="hero-meta">
+  <div><strong>10</strong><span>Active clients</span></div>
+  <div><strong>4</strong><span>Disciplines</span></div>
+  <div><strong>3</strong><span>Continents</span></div>
+  <div><strong>2024</strong><span>Founded</span></div>
 </div>
 
 <!-- MANIFESTO -->
-<section class="block" style="padding-top: 64px; padding-bottom: 0;">
-  <div class="manifesto">
-    <div class="manifesto-inner">
-      <span class="quote-mark">"</span>
-      <blockquote>
-        If your brand sounds like <em>everyone else's</em>,<br/>
-        you don't have a brand —<br/>
-        you have <em>wallpaper.</em>
-      </blockquote>
-      <div class="attr">The BRND OUT LOUD manifesto</div>
-    </div>
-  </div>
+<section class="manifesto-wrap">
+  <blockquote>If your brand sounds like everyone else's, you don't have a brand. You have <em>wallpaper.</em></blockquote>
+  <cite>Studio Manifesto</cite>
 </section>
 
 <!-- SERVICES -->
 <section class="block" id="services">
   <div class="section-head">
     <div class="num">01 / Services</div>
-    <h2>One studio. <em>Every</em><br/>touchpoint loud.</h2>
-    <div class="aside">We don't subcontract. We don't dabble. We build the whole brand — from name to nav — under one roof.</div>
+    <h2>One studio. <em>Every</em> touchpoint.</h2>
   </div>
   <div class="services">
-    <div class="service-card s1">
-      <div class="top">
-        <span class="num">01 — Branding</span>
-        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-      </div>
-      <div>
-        <h3>Branding<br/>that bites.</h3>
-        <p>Strategy, naming, identity systems, voice and visual language. We build brands you can hear from three rooms away.</p>
-        <ul><li>Strategy</li><li>Naming</li><li>Identity</li><li>Voice</li><li>Guidelines</li></ul>
-      </div>
+    <div class="service-card">
+      <div class="num">01 — Branding</div>
+      <h3>Identity systems.</h3>
+      <p>Strategy, naming, identity and voice. The foundations a brand stands on.</p>
+      <ul><li>Strategy</li><li>Naming</li><li>Identity</li><li>Voice</li><li>Guidelines</li></ul>
     </div>
-    <div class="service-card s2">
-      <div class="top">
-        <span class="num">02 — Design</span>
-        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-      </div>
-      <div>
-        <h3>Design<br/>that lingers.</h3>
-        <p>Print, packaging, editorial, collateral. The kind of work people keep on their desk after the project is done.</p>
-        <ul><li>Print</li><li>Packaging</li><li>Editorial</li><li>Zines</li><li>Collateral</li></ul>
-      </div>
+    <div class="service-card">
+      <div class="num">02 — Design</div>
+      <h3>Print and packaging.</h3>
+      <p>Editorial, packaging, collateral. The kind of work people hold on to.</p>
+      <ul><li>Print</li><li>Packaging</li><li>Editorial</li><li>Collateral</li></ul>
     </div>
-    <div class="service-card s3">
-      <div class="top">
-        <span class="num">03 — Social</span>
-        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-      </div>
-      <div>
-        <h3>Feeds<br/>worth following.</h3>
-        <p>Strategy, art direction, captions, content. We turn followers into a community and posts into a point of view.</p>
-        <ul><li>Strategy</li><li>Content</li><li>Captions</li><li>Reels</li><li>Ads</li></ul>
-      </div>
+    <div class="service-card">
+      <div class="num">03 — Social</div>
+      <h3>Considered feeds.</h3>
+      <p>Strategy, art direction and content. We help feeds become communities.</p>
+      <ul><li>Strategy</li><li>Content</li><li>Direction</li><li>Reels</li><li>Ads</li></ul>
     </div>
-    <div class="service-card s4">
-      <div class="top">
-        <span class="num">04 — Web</span>
-        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
-      </div>
-      <div>
-        <h3>Websites<br/>that convert.</h3>
-        <p>Editorial e-commerce, brand sites, landing pages. Built to load fast, look loud and earn the click.</p>
-        <ul><li>E-comm</li><li>Landing</li><li>Editorial</li><li>CMS</li><li>SEO</li></ul>
-      </div>
+    <div class="service-card">
+      <div class="num">04 — Web</div>
+      <h3>Sites built well.</h3>
+      <p>Editorial e-commerce, brand sites and landing pages. Fast, considered, true to the brand.</p>
+      <ul><li>E-commerce</li><li>Brand sites</li><li>Editorial</li><li>CMS</li></ul>
     </div>
   </div>
 </section>
 
 <!-- WORK -->
-<section class="block work-teaser" id="work" style="padding-top: 32px;">
-  <a class="work-teaser-card" href="work.html">
-    <div class="wt-left">
-      <div class="num">02 / Selected work</div>
-      <h2>Brands we've made <em>louder.</em></h2>
-      <p>Restaurants, fashion houses, skincare, hospitality — different rooms, same lungs. Ten brands and counting.</p>
-      <span class="wt-cta">See the studio archive <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+<section class="block" id="work">
+  <div class="section-head">
+    <div class="num">02 / Selected work</div>
+    <h2>A few brands we've <em>built.</em></h2>
+  </div>
+  <div class="work-grid">
+    <a class="work-tile" href="work.html">
+      <img src="assets/web-maeve.png" alt="House of Maeve" />
+      <div class="label">
+        <div>
+          <div class="name">House of Maeve</div>
+          <div class="meta">Brand · Web</div>
+        </div>
+        <div class="yr">2026</div>
+      </div>
+    </a>
+    <a class="work-tile" href="work.html">
+      <img src="assets/work-maestra.png" alt="Maestra" />
+      <div class="label">
+        <div>
+          <div class="name">Maestra</div>
+          <div class="meta">Identity</div>
+        </div>
+        <div class="yr">2026</div>
+      </div>
+    </a>
+    <a class="work-tile" href="work.html">
+      <img src="assets/web-aurora.png" alt="Aurora Skin" />
+      <div class="label">
+        <div>
+          <div class="name">Aurora Skin</div>
+          <div class="meta">Brand · Web · Pack</div>
+        </div>
+        <div class="yr">2025</div>
+      </div>
+    </a>
+    <a class="work-tile" href="work.html">
+      <img src="assets/web-casa.png" alt="Casa Tavani" />
+      <div class="label">
+        <div>
+          <div class="name">Casa Tavani</div>
+          <div class="meta">Brand · Web · Social</div>
+        </div>
+        <div class="yr">2025</div>
+      </div>
+    </a>
+    <a class="work-tile" href="work.html">
+      <img src="assets/web-atelier.png" alt="Atelier Noir" />
+      <div class="label">
+        <div>
+          <div class="name">Atelier Noir</div>
+          <div class="meta">Brand · Web</div>
+        </div>
+        <div class="yr">2024</div>
+      </div>
+    </a>
+    <a class="work-tile" href="work.html">
+      <img src="assets/web-north.png" alt="North Kitchen" />
+      <div class="label">
+        <div>
+          <div class="name">North Kitchen</div>
+          <div class="meta">Web · CMS</div>
+        </div>
+        <div class="yr">2025</div>
+      </div>
+    </a>
+  </div>
+  <div class="work-link"><a href="work.html">See all work →</a></div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="block" id="founders">
+  <div class="section-head">
+    <div class="num">03 / The studio</div>
+    <h2>Two founders. <em>One</em> opinion.</h2>
+  </div>
+  <div class="founders">
+    <div class="founder">
+      <div class="role">Founder · Creative</div>
+      <div class="name">Karen.</div>
+      <p class="bio">Brand and art direction. Twelve years building identities for hospitality, fashion and skincare across the region.</p>
+      <div class="quote">"A logo is a noun. A brand is a verb."</div>
     </div>
-    <div class="wt-right">
-      <div class="wt-tile t1"><span>Maeve</span></div>
-      <div class="wt-tile t2"><span>Maestra</span></div>
-      <div class="wt-tile t3"><span>Aurora</span></div>
-      <div class="wt-tile t4"><span>Casa Tavani</span></div>
+    <div class="founder">
+      <div class="role">Founder · Strategy</div>
+      <div class="name">Nadia.</div>
+      <p class="bio">Strategy, voice and the words on the page. Ex-agency planner with a soft spot for founders who care about the details.</p>
+      <div class="quote">"Quiet brands get scrolled past."</div>
     </div>
-  </a>
+  </div>
 </section>
 
 <!-- PROCESS -->
-<section class="block" id="process" style="padding-top: 32px;">
+<section class="block" id="process">
   <div class="section-head">
-    <div class="num">03 / How we work</div>
-    <h2>Four rooms.<br/>One <em>loud</em> brand.</h2>
-    <div class="aside">A focused 8-to-12 week sprint. No agencies of agencies. No mood boards that go nowhere.</div>
+    <div class="num">04 / How we work</div>
+    <h2>Four rooms. <em>One</em> brand.</h2>
   </div>
   <div class="process">
     <div class="process-step">
       <div class="pnum">01</div>
       <h4>Listen.</h4>
-      <p>A 90-minute kickoff. We dig into the founder, the audience, the room you walk into. No template surveys.</p>
+      <p>A 90-minute kickoff. We dig into the founder, the audience and the room you walk into.</p>
     </div>
     <div class="process-step">
       <div class="pnum">02</div>
       <h4>Position.</h4>
-      <p>Strategy, voice, name if you need one. We hand you a brand book before we touch a Pantone swatch.</p>
+      <p>Strategy and voice, name if you need one. A brand book before we touch a swatch.</p>
     </div>
     <div class="process-step">
       <div class="pnum">03</div>
-      <h4>Make.</h4>
-      <p>Identity, design, social, web. Built in parallel by the same two heads so nothing falls out of tune.</p>
+      <h4>Build.</h4>
+      <p>Identity, design, social and web, built in parallel by the same two heads.</p>
     </div>
     <div class="process-step">
       <div class="pnum">04</div>
       <h4>Launch.</h4>
-      <p>A go-loud rollout — site, social, ads, day-one content. You don't fade in. You arrive.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDERS -->
-<section class="block" id="founders" style="padding-top: 32px;">
-  <div class="section-head">
-    <div class="num">04 / The studio</div>
-    <h2>Two heads. <em>One</em> opinion.</h2>
-    <div class="aside">A two-woman studio on purpose. No accounts team. No hand-offs. The people you meet are the people who do the work.</div>
-  </div>
-  <div class="founders-grid-typo">
-    <div class="founder-typo">
-      <div class="f-role">Founder · Creative</div>
-      <div class="f-name">Sofia<br/>Marín.</div>
-      <div class="f-bio">Twelve years in brand and art direction. Trained at studios in Lisbon and Milan, brought all the opinions home.</div>
-      <div class="f-quote">“A logo is a noun. A brand is a verb.”</div>
-    </div>
-    <div class="founder-typo dark">
-      <div class="f-role">Founder · Strategy</div>
-      <div class="f-name">Liv<br/>Khoury.</div>
-      <div class="f-bio">Strategy, voice and the words on the page. Ex-agency planner with a soft spot for founders who refuse to be polite.</div>
-      <div class="f-quote">“Quiet brands get scrolled past.”</div>
-    </div>
-  </div>
-</section>
-
-<!-- (legacy founders removed) -->
-<section style="display:none">
-  <div class="founders-grid">
-    <div class="founder-card">
-      <div class="img-wrap">
-        <span class="badge">Founder · Creative</span>
-        <img src="assets/founder-01.png" alt="Founder portrait" />
-      </div>
-      <div class="info">
-        <div>
-          <div class="name">Sofia<br/>Marín.</div>
-          <div class="role">Brand &amp; Art Direction</div>
-        </div>
-        <div class="quote">"A logo is a noun.<br/>A brand is a verb."</div>
-      </div>
-    </div>
-    <div class="founder-card">
-      <div class="img-wrap">
-        <span class="badge">Founder · Strategy</span>
-        <img src="assets/founder-02.png" alt="Founder portrait" />
-      </div>
-      <div class="info">
-        <div>
-          <div class="name">Liv<br/>Khoury.</div>
-          <div class="role">Strategy &amp; Voice</div>
-        </div>
-        <div class="quote">"Quiet brands<br/>get scrolled past."</div>
-      </div>
+      <p>Site, social and day-one content. You don't fade in. You arrive.</p>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIAL -->
-<section class="block" style="padding-top: 32px;">
-  <div class="testi-wrap">
-    <div class="testi-inner">
-      <div id="testi-content">
-        <blockquote id="testi-quote">"We came in with a list of fonts. We left with a point of view. Six weeks later we're getting DMs from people who've never bought a thing from us, just to say the brand made them stop scrolling."</blockquote>
-        <div class="source">
-          <div class="av" id="testi-av">M</div>
-          <div class="who">
-            <strong id="testi-who">Marisol Vega</strong>
-            <span id="testi-role">Founder, Maestra</span>
-          </div>
-        </div>
-      </div>
-      <div class="testi-nav">
-        <button onclick="prevTesti()" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
-        <button onclick="nextTesti()" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
-      </div>
-    </div>
+<section class="testi">
+  <div class="testi-inner">
+    <blockquote id="testi-quote">We came in with a list of fonts. We left with a point of view.</blockquote>
+    <cite id="testi-cite">Marisol Vega · Founder, Maestra</cite>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-block" id="contact">
-  <div class="badge"><span class="dot"></span>Now booking · Summer 2026</div>
-  <h2>Let's get<br/><em>loud.</em></h2>
-  <p>Two project slots left this season. If your brand has been mumbling, this is the part where we change that.</p>
+<section class="end-cta" id="contact">
+  <h2>Let's <em>begin.</em></h2>
+  <p>Two project slots open this season. We answer within 24 hours.</p>
   <div class="row">
-    <button class="primary" onclick="window.location.href='mailto:hi@brndoutloud.com?subject=New%20brand%20enquiry'">hi@brndoutloud.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-    <a class="secondary" href="https://www.instagram.com/brndoutloud" target="_blank" rel="noopener">or DM @brndoutloud →</a>
+    <a href="mailto:hi@brndoutloud.com" class="primary">hi@brndoutloud.com</a>
+    <a href="https://www.instagram.com/brndoutloud" target="_blank" rel="noopener" class="secondary">or DM @brndoutloud →</a>
   </div>
 </section>
 
@@ -598,16 +414,16 @@
     <div class="foot-top">
       <div class="brand">
         <img src="assets/logo.png" alt="" />
-        <h3>We don't<br/>whisper. <em>We brand<br/>out loud.</em></h3>
-        <p>A full-service creative studio for brands that refuse to fade into the wallpaper. Based everywhere, working worldwide.</p>
+        <h3>A creative studio for brands worth remembering.</h3>
+        <p>Branding, design, social and websites, under one roof.</p>
       </div>
       <div class="col">
         <h4>Studio</h4>
         <ul>
-          <li><a href="work.html">Selected work</a></li>
+          <li><a href="work.html">Work</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#founders">Founders</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#founders">The team</a></li>
         </ul>
       </div>
       <div class="col">
@@ -615,99 +431,70 @@
         <ul>
           <li><a href="mailto:hi@brndoutloud.com">hi@brndoutloud.com</a></li>
           <li><a href="https://www.instagram.com/brndoutloud" target="_blank" rel="noopener">Instagram</a></li>
-          <li><span style="opacity:0.5">LinkedIn — soon</span></li>
-          <li><span style="opacity:0.5">Are.na — soon</span></li>
+          <li><a href="https://brndoutloud.co">brndoutloud.co</a></li>
         </ul>
       </div>
       <div class="col">
         <h4>Office</h4>
         <ul>
-          <li><a href="https://brndoutloud.co">brndoutloud.co</a></li>
-          <li><span style="opacity:0.85">Lisbon · Remote</span></li>
-          <li><span style="opacity:0.5">Press kit — soon</span></li>
-          <li><span style="opacity:0.5">Careers — soon</span></li>
+          <li><span>Worldwide · Remote</span></li>
+          <li><span>Now booking 2026</span></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 BRND OUT LOUD · All rights, very loud.</span>
-      <span class="star">★ Built loud, on purpose.</span>
-      <span>v1.0 · Lisbon → Worldwide</span>
+      <span>© 2026 BRND OUT LOUD</span>
+      <span class="tagline">We don't whisper. We brand out loud.</span>
     </div>
   </div>
 </footer>
 
 <script>
-  // TICKER content
-  const tickerWords = [
-    "★ Branding",
-    "★ Design",
-    "★ Social",
-    "★ Websites",
-    "★ Now booking summer 2026",
-    "★ Two slots left",
-    "★ hi@brndoutloud.com",
-    "★ Made loud, on purpose"
-  ];
-  const tickerHTML = tickerWords.map(w => `<span>${w}</span>`).join('');
-  document.getElementById('ticker-track').innerHTML = tickerHTML + tickerHTML + tickerHTML + tickerHTML;
+// Quiet testimonial rotation
+const testimonials = [
+  { q: "We came in with a list of fonts. We left with a point of view.", c: "Marisol Vega · Founder, Maestra" },
+  { q: "The work is genuinely beautiful, but it's the strategy underneath that pays the rent.", c: "Ines Câmara · Owner, Casa Tavani" },
+  { q: "Six weeks in we were getting messages from people who hadn't even bought a thing, just to say the brand made them stop scrolling.", c: "Hana Park · CEO, Aurora Skin" },
+  { q: "A brand book and a backbone. That's what they hand you.", c: "Theo Mensah · Founder, House of Maeve" }
+];
+let ti = 0;
+const tq = document.getElementById('testi-quote');
+const tc = document.getElementById('testi-cite');
+tq.style.transition = 'opacity 0.35s';
+tc.style.transition = 'opacity 0.35s';
+function nextT() {
+  ti = (ti + 1) % testimonials.length;
+  tq.style.opacity = 0;
+  tc.style.opacity = 0;
+  setTimeout(() => {
+    tq.textContent = testimonials[ti].q;
+    tc.textContent = testimonials[ti].c;
+    tq.style.opacity = 1;
+    tc.style.opacity = 1;
+  }, 280);
+}
+setInterval(nextT, 9000);
 
-  // Big marquee
-  const bigWords = [
-    "<span>WE DON'T WHISPER<span class='dot'></span></span>",
-    "<span class='star'>we brand out loud<span class='dot'></span></span>",
-    "<span>STAND OUT<span class='dot'></span></span>",
-    "<span>STAY LOUD<span class='dot'></span></span>",
-    "<span class='star'>be bold · be heard<span class='dot'></span></span>",
-    "<span>MAKE SOME NOISE<span class='dot'></span></span>"
-  ].join('');
-  document.getElementById('marquee-big-track').innerHTML = bigWords + bigWords + bigWords;
+// Reveal on scroll
+const ro = document.querySelectorAll('.section-head, .service-card, .work-tile, .process-step, .founder, .manifesto-wrap, .testi-inner, .end-cta, .hero-img');
+ro.forEach(e => e.classList.add('reveal'));
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+ro.forEach(e => io.observe(e));
 
-  // Testimonials carousel
-  const testimonials = [
-    { q: "We came in with a list of fonts. We left with a point of view. Six weeks later we're getting DMs from people who've never bought a thing from us, just to say the brand made them stop scrolling.", who: "Marisol Vega", role: "Founder, Maestra", av: "M" },
-    { q: "The kind of studio that gives you a brand book and a backbone. We launched louder than competitors twice our size — and the founders still answer my texts.", who: "Hana Park", role: "CEO, Aurora Skin", av: "H" },
-    { q: "Everything we asked for, and a dozen sharper things we didn't know how to ask for. Our site converted at 4.2% the day it launched. Wallpaper, we are not.", who: "Theo Mensah", role: "Founder, House of Maeve", av: "T" },
-    { q: "They rebuilt the entire feed in eight weeks. Followers up 3x, DM enquiries up 5x. The work is genuinely beautiful, but it's the strategy underneath that pays the rent.", who: "Ines Câmara", role: "Owner, Casa Tavani", av: "I" }
-  ];
-  let testiIdx = 0;
-  function renderTesti() {
-    const t = testimonials[testiIdx];
-    const content = document.getElementById('testi-content');
-    content.style.opacity = 0;
-    setTimeout(() => {
-      document.getElementById('testi-quote').textContent = `"${t.q}"`;
-      document.getElementById('testi-who').textContent = t.who;
-      document.getElementById('testi-role').textContent = t.role;
-      document.getElementById('testi-av').textContent = t.av;
-      content.style.opacity = 1;
-    }, 220);
-  }
-  function nextTesti() { testiIdx = (testiIdx + 1) % testimonials.length; renderTesti(); }
-  function prevTesti() { testiIdx = (testiIdx - 1 + testimonials.length) % testimonials.length; renderTesti(); }
-  document.getElementById('testi-content').style.transition = 'opacity 0.25s ease';
-  // auto rotate
-  setInterval(nextTesti, 8000);
-
-  // Reveal on scroll
-  const revealEls = document.querySelectorAll('.section-head, .service-card, .work-card, .process-step, .founder-card, .testi-wrap, .manifesto');
-  revealEls.forEach(el => el.classList.add('reveal'));
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  revealEls.forEach(el => io.observe(el));
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const id = a.getAttribute('href');
-      if (id.length > 1) {
-        const target = document.querySelector(id);
-        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-      }
-    });
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id.length > 1) {
+      const t = document.querySelector(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    }
   });
+});
 </script>
 
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
