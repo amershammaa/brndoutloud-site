@@ -106,27 +106,40 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 72px 48px; }
 .section-head .aside { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.55; color: var(--fg-soft); max-width: 360px; padding-top: 18px; }
 
 /* SERVICES (simple list) */
-.svc-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.svc-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--accent); border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); }
 .svc { background: var(--bg); padding: 36px 28px; display: flex; flex-direction: column; gap: 12px; transition: background 0.3s; }
 .svc:hover { background: var(--cream-warm); }
-.svc .svc-n { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--accent); }
+.svc .svc-n { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: var(--cream); background: var(--accent); padding: 4px 10px; border-radius: 999px; align-self: flex-start; }
 .svc h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 26px; letter-spacing: -0.02em; color: var(--fg); line-height: 1.1; }
 .svc p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.55; color: var(--fg-soft); }
 
 /* PACKAGES */
-.packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.pkg { padding: 40px 32px; border-radius: 16px; display: flex; flex-direction: column; gap: 16px; transition: transform 0.3s; }
+.packages { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.pkg { padding: 40px 36px; border-radius: 16px; display: flex; flex-direction: column; gap: 18px; transition: transform 0.3s; }
 .pkg:hover { transform: translateY(-3px); }
 .pkg.light { background: var(--cream-warm); color: var(--fg); }
 .pkg.dark { background: var(--burgundy); color: var(--cream); }
 .pkg.dark .pk-tag { color: var(--pink); }
 .pkg .pk-tag { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; }
-.pkg h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(28px, 2.6vw, 36px); letter-spacing: -0.02em; line-height: 1.05; }
-.pkg p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; opacity: 0.88; }
-.pkg .pk-cta { margin-top: auto; padding-top: 12px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; border-bottom: 1px solid currentColor; padding-bottom: 4px; transition: opacity 0.25s; color: inherit; }
+.pkg h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(30px, 2.8vw, 40px); letter-spacing: -0.02em; line-height: 1.05; }
+.pkg p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.55; opacity: 0.85; }
+.tiers { display: flex; flex-direction: column; gap: 14px; padding: 18px 0; border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; }
+.pkg.light .tiers { border-color: rgba(108, 6, 43, 0.16); }
+.pkg.dark .tiers { border-color: rgba(249, 248, 245, 0.18); }
+.tier { display: grid; grid-template-columns: 90px 110px 1fr; gap: 14px; align-items: baseline; }
+.tier .tier-name { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.7; }
+.tier.popular .tier-name { color: var(--accent); opacity: 1; font-weight: 500; }
+.pkg.dark .tier.popular .tier-name { color: var(--pink); }
+.tier .tier-price { font-family: 'Fraunces', serif; font-weight: 500; font-size: 18px; letter-spacing: -0.015em; }
+.tier .tier-price small { font-size: 10px; font-weight: 400; opacity: 0.7; margin-left: 2px; }
+.tier .tier-d { font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.45; opacity: 0.78; }
+.pkg .pk-cta { margin-top: auto; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; border-bottom: 1px solid currentColor; padding-bottom: 4px; transition: opacity 0.25s; color: inherit; }
 .pkg .pk-cta:hover { opacity: 0.7; }
 .pkg .pk-cta span { transition: transform 0.25s; display: inline-block; }
 .pkg .pk-cta:hover span { transform: translateX(4px); }
+.pkg-footer { margin-top: 28px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--fg-soft); text-align: center; line-height: 1.55; }
+.pkg-footer a { color: var(--accent); border-bottom: 1px solid currentColor; padding-bottom: 1px; transition: opacity 0.2s; }
+.pkg-footer a:hover { opacity: 0.7; }
 
 /* WORK */
 .work-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
@@ -219,12 +232,17 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   nav.top .nav-toggle { display: flex; }
   .svc-list { grid-template-columns: repeat(2, 1fr); }
   .packages { grid-template-columns: 1fr; }
+  .pkg { padding: 32px 24px; }
+  .tier { grid-template-columns: 80px 90px 1fr; gap: 10px; }
   .work-grid { grid-template-columns: repeat(2, 1fr); }
   .testi-body { margin-left: 0; }
   .testi-block { padding: 56px 24px; }
 }
 @media (max-width: 640px) {
-  .stats-inner { grid-template-columns: 1fr; gap: 20px; }
+  .stats-inner { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .stat-cell { gap: 10px; padding-top: 10px; }
+  .stat-cell strong { font-size: 32px; }
+  .stat-cell span { font-size: 8.5px; letter-spacing: 0.18em; }
   .svc-list { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
   .hero-content h1 { font-size: clamp(40px, 10vw, 64px); }
@@ -325,28 +343,60 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 <section class="block" id="packages">
   <div class="section-head">
     <div class="num">02 / Packages</div>
-    <h2>Three ways to <em>work with us.</em></h2>
+    <h2>Pick a <em>package.</em></h2>
   </div>
   <div class="packages">
+
     <div class="pkg light">
       <div class="pk-tag">A · One-time</div>
-      <h3>Full brand build.</h3>
-      <p>A complete brand from scratch. Strategy, naming, identity, brand book, website and launch toolkit. Roughly 8 to 12 weeks.</p>
+      <h3>Full brand kit.</h3>
+      <p>Identity, naming, brand book and launch toolkit. Everything to take a brand from idea to live.</p>
+      <div class="tiers">
+        <div class="tier"><span class="tier-name">Starter</span><span class="tier-price">$3,500</span><span class="tier-d">Logo + 3 marks, basic brand guidelines, 1 mockup pack.</span></div>
+        <div class="tier popular"><span class="tier-name">Advanced</span><span class="tier-price">$7,500</span><span class="tier-d">Full identity system, 40-page brand book, social templates, 3 mockup packs.</span></div>
+        <div class="tier"><span class="tier-name">Premium</span><span class="tier-price">$14,000</span><span class="tier-d">Everything in Advanced, plus naming, strategy workshop, launch video.</span></div>
+      </div>
       <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
     </div>
+
     <div class="pkg dark">
       <div class="pk-tag">B · Monthly</div>
-      <h3>Run my brand.</h3>
-      <p>Monthly social media management plus ongoing design support. Content, art direction, paid ads, design whenever you need it.</p>
+      <h3>Full content.</h3>
+      <p>Monthly content production for Instagram, TikTok and Facebook. Reels, posts, captions and a calendar that ships on time.</p>
+      <div class="tiers">
+        <div class="tier"><span class="tier-name">Starter</span><span class="tier-price">$1,499<small>/mo</small></span><span class="tier-d">4 reels + 5 static posts per month.</span></div>
+        <div class="tier popular"><span class="tier-name">Advanced</span><span class="tier-price">$2,499<small>/mo</small></span><span class="tier-d">6 reels + 10 posts + 1 monthly shoot.</span></div>
+        <div class="tier"><span class="tier-name">Premium</span><span class="tier-price">$4,499<small>/mo</small></span><span class="tier-d">12 reels + 20 posts + 2 shoots + UGC.</span></div>
+      </div>
       <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
     </div>
+
     <div class="pkg light">
-      <div class="pk-tag">C · One-time</div>
-      <h3>Just a website.</h3>
-      <p>A brand site or e-commerce build for brands that already have an identity. Designed and built, end to end.</p>
+      <div class="pk-tag">C · Monthly</div>
+      <h3>Social with ads.</h3>
+      <p>Full content production plus Meta Ads campaign management. We run the channel and the paid spend together.</p>
+      <div class="tiers">
+        <div class="tier"><span class="tier-name">Starter</span><span class="tier-price">$2,999<small>/mo</small></span><span class="tier-d">Starter content + ads up to $2K/mo spend.</span></div>
+        <div class="tier popular"><span class="tier-name">Advanced</span><span class="tier-price">$4,999<small>/mo</small></span><span class="tier-d">Advanced content + ads up to $5K/mo + monthly strategy call.</span></div>
+        <div class="tier"><span class="tier-name">Premium</span><span class="tier-price">$9,999<small>/mo</small></span><span class="tier-d">Premium content + ads up to $15K/mo + dedicated strategist.</span></div>
+      </div>
       <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
     </div>
+
+    <div class="pkg dark">
+      <div class="pk-tag">D · One-time</div>
+      <h3>Website.</h3>
+      <p>Brand sites, editorial e-commerce, landing pages. Designed and built end to end, properly on-brand.</p>
+      <div class="tiers">
+        <div class="tier"><span class="tier-name">Starter</span><span class="tier-price">$4,500</span><span class="tier-d">1 to 3 page landing site, fully responsive.</span></div>
+        <div class="tier popular"><span class="tier-name">Advanced</span><span class="tier-price">$8,500</span><span class="tier-d">5 to 8 page brand site with CMS and SEO setup.</span></div>
+        <div class="tier"><span class="tier-name">Premium</span><span class="tier-price">$16,000</span><span class="tier-d">Full e-commerce build with custom design and integrations.</span></div>
+      </div>
+      <a class="pk-cta" href="https://wa.me/971504898439" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
+    </div>
+
   </div>
+  <div class="pkg-footer">All packages are starting points. We tailor every brief. <a href="https://wa.me/971504898439" target="_blank" rel="noopener">Ask for a custom quote &rarr;</a></div>
 </section>
 
 <!-- WORK -->
