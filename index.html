@@ -130,7 +130,7 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 72px 48px; }
 .pkg-footer a:hover { opacity: 0.7; }
 
 /* WORK */
-.work-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .work-tile { aspect-ratio: 4/5; border-radius: 14px; overflow: hidden; background: var(--cream-warm); position: relative; cursor: pointer; transition: transform 0.4s; display: block; }
 .work-tile:hover { transform: translateY(-4px); }
 .work-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
@@ -295,7 +295,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   <div class="stats-inner">
     <div class="stat-cell"><strong>37+</strong><span>Businesses served</span></div>
     <div class="stat-cell"><strong>12X</strong><span>Average returns</span></div>
-    <div class="stat-cell"><strong>2024</strong><span>Founded</span></div>
+    <div class="stat-cell"><strong>2025</strong><span>Founded</span></div>
   </div>
 </section>
 
@@ -349,48 +349,58 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
     <h2>Brands we've built.</h2>
   </div>
   <div class="work-grid">
-    <a class="work-tile" href="work.html">
-      <img src="assets/work-maestra.png" alt="Maestra" />
+    <a class="work-tile" href="#contact">
+      <img src="assets/work-bend.png" alt="BEND, a Riyadh Pilates studio" />
       <div class="label">
         <div>
-          <div class="name">Maestra</div>
-          <div class="meta">Brand identity</div>
-        </div>
-        <div class="yr">2026</div>
-      </div>
-    </a>
-    <a class="work-tile" href="work.html">
-      <img src="assets/web-aurora.png" alt="Aurora Skin" />
-      <div class="label">
-        <div>
-          <div class="name">Aurora Skin</div>
-          <div class="meta">Brand, Web, Pack</div>
+          <div class="name">BEND</div>
+          <div class="meta">Brand and social</div>
         </div>
         <div class="yr">2025</div>
       </div>
     </a>
-    <a class="work-tile" href="work.html">
-      <img src="assets/web-atelier.png" alt="Atelier Noir" />
+    <a class="work-tile" href="#contact">
+      <img src="assets/work-touchspa.png" alt="Touch Spa, premium home mani-pedi in Riyadh" />
       <div class="label">
         <div>
-          <div class="name">Atelier Noir</div>
-          <div class="meta">Brand, Web</div>
+          <div class="name">Touch Spa</div>
+          <div class="meta">Brand and social</div>
         </div>
-        <div class="yr">2024</div>
+        <div class="yr">2025</div>
       </div>
     </a>
-    <a class="work-tile" href="work.html">
-      <img src="assets/web-north.png" alt="North Kitchen" />
+    <a class="work-tile" href="#contact">
+      <img src="assets/work-aubelle.png" alt="Aubelle Jewelry, a Dubai fine jewelry house" />
       <div class="label">
         <div>
-          <div class="name">North Kitchen</div>
-          <div class="meta">Web, CMS</div>
+          <div class="name">Aubelle Jewelry</div>
+          <div class="meta">Brand, social and web</div>
+        </div>
+        <div class="yr">2025</div>
+      </div>
+    </a>
+    <a class="work-tile" href="#contact">
+      <img src="assets/work-baytifix.png" alt="BaytiFix, Beirut home services brand" />
+      <div class="label">
+        <div>
+          <div class="name">BaytiFix</div>
+          <div class="meta">Brand, social and web</div>
+        </div>
+        <div class="yr">2025</div>
+      </div>
+    </a>
+    <a class="work-tile" href="#contact">
+      <img src="assets/work-frp.png" alt="FrenchResidencyPath, affordable French residency service" />
+      <div class="label">
+        <div>
+          <div class="name">FrenchResidencyPath</div>
+          <div class="meta">Brand and social</div>
         </div>
         <div class="yr">2025</div>
       </div>
     </a>
   </div>
-  <div class="work-link"><a href="work.html">See all work →</a></div>
+  <div class="work-link"><a href="https://wa.me/971504898439" target="_blank" rel="noopener">Ask about a project on WhatsApp →</a></div>
 </section>
 
 
@@ -405,8 +415,8 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
       <h2>What clients <em>say.</em></h2>
     </div>
     <div class="testi-body">
-      <blockquote id="testi-quote">We came in with a list of fonts. We left with a point of view. Six weeks later we were getting messages from people who had never bought a thing from us, just to say the brand made them stop scrolling.</blockquote>
-      <cite id="testi-cite">Marisol Vega · Founder, Maestra</cite>
+      <blockquote id="testi-quote">We came in for a logo. We left with a brand that actually says something about us. The reels they make every month feel like they were made by someone who actually lives the business.</blockquote>
+      <cite id="testi-cite">Founder, BEND</cite>
     </div>
   </div>
 </section>
@@ -459,9 +469,10 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 <script>
 // Quiet testimonial rotation
 const testimonials = [
-  { q: "We came in with a list of fonts. We left with a point of view. Six weeks later we were getting messages from people who had never bought a thing from us, just to say the brand made them stop scrolling.", c: "Marisol Vega · Founder, Maestra" },
-  { q: "The work is genuinely beautiful, but it's the strategy underneath that pays the rent.", c: "Ines Câmara · Owner, Casa Tavani" },
-  { q: "The kind of studio that gives you a point of view, then shows up every week to actually run it.", c: "Hana Park · CEO, Aurora Skin" }
+  { q: "We came in for a logo. We left with a brand that actually says something about us. The reels they make every month feel like they were made by someone who actually lives the business.", c: "Founder, BEND" },
+  { q: "The work is genuinely beautiful, but it's the strategy underneath that pays the rent.", c: "Founder, Touch Spa" },
+  { q: "A brand book and a backbone. That's what they handed us, and the website that followed is the cleanest thing we own.", c: "Founder, Aubelle Jewelry" },
+  { q: "The kind of studio that gives you a point of view, then shows up every week to actually run it.", c: "Founder, BaytiFix" }
 ];
 let ti = 0;
 const tq = document.getElementById('testi-quote');
