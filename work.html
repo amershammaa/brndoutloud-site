@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Selected Work | BRND OUT LOUD</title>
-<meta name="description" content="Studio concepts and selected work from BRND OUT LOUD, a full-service creative studio." />
+<meta name="description" content="Selected client work from BRND OUT LOUD across branding, social, campaigns, websites and digital experiences." />
 <meta property="og:title" content="Selected Work | BRND OUT LOUD" />
-<meta property="og:description" content="Studio concepts and selected work across branding, design, social media, websites and apps." />
+<meta property="og:description" content="Real client partnerships across branding, social, campaigns, websites and digital experiences." />
 <meta property="og:image" content="assets/logo.png" />
 <meta property="og:url" content="https://brndoutloud.com/work.html" />
 <meta property="og:type" content="website" />
@@ -82,9 +82,10 @@
 
   /* GRID */
   .work-grid { max-width: 1440px; margin: 0 auto; padding: 56px 48px 96px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 28px; }
-  .case { position: relative; border-radius: 18px; overflow: hidden; background: var(--cream-warm); cursor: pointer; transition: transform 0.5s cubic-bezier(.2,.8,.2,1), opacity 0.4s; }
+  .case { position: relative; border: 0; padding: 0; color: inherit; font: inherit; text-align: left; border-radius: 18px; overflow: hidden; background: var(--cream-warm); cursor: pointer; transition: transform 0.5s cubic-bezier(.2,.8,.2,1), opacity 0.4s; }
   body[data-mode="dark"] .case { background: rgba(249,248,245,0.06); }
   .case:hover { transform: translateY(-6px); }
+  .case:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
   .case .img { width: 100%; aspect-ratio: 4/5; overflow: hidden; }
   .case .img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
   .case:hover .img img { transform: scale(1.04); }
@@ -114,7 +115,7 @@
   body[data-mode="dark"] .modal .close:hover { color: var(--burgundy); }
   .modal .hero-img { width: 100%; aspect-ratio: 16/10; background: var(--cream-warm); overflow: hidden; }
   body[data-mode="dark"] .modal .hero-img { background: rgba(249,248,245,0.06); }
-  .modal .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .modal .hero-img img { width: 100%; height: 100%; object-fit: contain; }
   .modal .body { padding: 48px 56px; }
   .modal .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
   .modal h2 { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(40px, 5vw, 64px); line-height: 0.95; letter-spacing: -0.035em; margin-bottom: 24px; }
@@ -183,11 +184,11 @@
 
 <header class="work-header">
   <div>
-    <div class="eyebrow">Studio concepts · selected work</div>
+    <div class="eyebrow">Real client partnerships · selected work</div>
     <h1>Brands built to be<br/><em>remembered.</em></h1>
   </div>
   <div class="meta">
-    <div><strong>10</strong>Concepts and studies</div>
+    <div><strong>5</strong>Featured clients</div>
     <div><strong>4</strong>Disciplines</div>
     <div><strong>1</strong>Connected studio</div>
   </div>
@@ -198,8 +199,8 @@
   <button data-f="brand">Branding</button>
   <button data-f="web">Websites &amp; Apps</button>
   <button data-f="social">Social</button>
-  <button data-f="print">Print &amp; design</button>
-  <span class="count" id="count">10 projects</span>
+  <button data-f="campaign">Campaigns</button>
+  <span class="count" id="count">5 client partnerships</span>
 </div>
 
 <section class="work-grid" id="grid">
@@ -221,7 +222,7 @@
 </footer>
 
 <!-- MODAL -->
-<div class="modal" id="modal" onclick="closeModalBg(event)">
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title" onclick="closeModalBg(event)">
   <div class="panel" onclick="event.stopPropagation()">
     <button class="close" onclick="closeModal()" aria-label="Close">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -256,64 +257,39 @@
 
   // CASES
   const cases = [
-    { id: 'maeve', name: 'House of Maeve', meta: 'Brand · Web · E-commerce', tags: ['brand','web'], yr: '2026', img: 'assets/web-maeve.png', span: 'span-7', badge: 'Studio concept',
-      sector: 'Fashion · Luxury essentials', client: 'Studio concept', scope: 'Identity + e-commerce',
-      summary: 'A house of essentials shaped through positioning, identity and an editorial e-commerce direction.',
-      body: 'The concept explores naming, a deep-burgundy identity, tactile art direction and a clear path from product story to purchase.',
-      deliverables: ['Naming','Identity','Brand guide','E-commerce','Lookbook','Packaging'] },
-    { id: 'maestra', name: 'Maestra', meta: 'Restaurant identity', tags: ['brand','print'], yr: '2026', img: 'assets/work-maestra.png', span: 'span-5', badge: 'Studio concept',
-      sector: 'Hospitality · Mediterranean dining', client: 'Studio concept', scope: 'Full brand identity',
-      summary: 'A neighbourhood trattoria that wanted to feel like a postcard from Sicily.',
-      body: 'A terracotta and olive identity with a distinctive logotype, hand-drawn marks, menus, packaging and hospitality collateral.',
-      deliverables: ['Strategy','Logo','Menu','Packaging','Collateral','Signage'] },
-    { id: 'aurora', name: 'Aurora Skin', meta: 'Brand · Web · Packaging', tags: ['brand','web'], yr: '2025', img: 'assets/web-aurora.png', span: 'span-6', badge: 'Studio concept',
-      sector: 'Skincare · Botanical', client: 'Studio concept', scope: 'Brand + DTC site',
-      summary: '"Ritual over routine." Clean botanical skincare for slow mornings.',
-      body: 'A burgundy and sage identity, packaging direction, editorial journal and digital storefront concept with a personalised ritual quiz.',
-      deliverables: ['Brand','Packaging','Web','Quiz','Journal','Subscribe flow'] },
-    { id: 'north', name: 'North Kitchen', meta: 'Hospitality · Web', tags: ['brand','web'], yr: '2025', img: 'assets/web-north.png', span: 'span-4', badge: 'Studio concept',
-      sector: 'Hospitality · Nordic dining', client: 'Studio concept', scope: 'Website + booking system',
-      summary: 'Quiet, confident, snow-on-glass. A Nordic seasonal restaurant site.',
-      body: 'Editorial photography, a custom menu content system and a reservation flow built around seasonal rotation.',
-      deliverables: ['Web','CMS','Reservations','Photography'] },
-    { id: 'casa', name: 'Casa Tavani', meta: 'Trattoria · Brand · Web', tags: ['brand','web','social'], yr: '2025', img: 'assets/web-casa.png', span: 'span-4', badge: 'Studio concept',
-      sector: 'Hospitality · Italian', client: 'Studio concept', scope: 'Brand + Web + Social',
-      summary: 'A family trattoria worthy of the family that runs it.',
-      body: 'A recipe-book-inspired brand with watercolour illustrations, hand-set menus, a responsive website and a community-led social direction.',
-      deliverables: ['Identity','Web','Social','Photography','Menus'] },
-    { id: 'atelier', name: 'Atelier Noir', meta: 'Fashion · Web', tags: ['brand','web'], yr: '2024', img: 'assets/web-atelier.png', span: 'span-4', badge: 'Studio concept',
-      sector: 'Fashion · Independent', client: 'Studio concept', scope: 'Identity + website',
-      summary: 'A black-clothing house with a sharp tongue and a sharper site.',
-      body: 'All-black palette is easy. Making it feel warm is the trick. Custom serif logotype, white-glove e-comm, and a lookbook editorial system.',
-      deliverables: ['Identity','Web','Lookbook'] },
-    { id: 'branding', name: 'Studio Branding Set', meta: 'Branding studies', tags: ['brand','print'], yr: '2024', img: 'assets/work-branding-cover.png', span: 'span-7', badge: 'Studio study',
-      sector: 'Multi-sector', client: 'Studio study', scope: 'Brand studies',
-      summary: 'A year of brand systems, end to end. Five clients, five voices, one studio.',
-      body: 'Brand guides, identity studies, typographic stacks and palette work developed as a demonstration of the studio\'s full-brand approach.',
-      deliverables: ['Strategy','Identity','Books','Type systems','Palettes'] },
-    { id: 'design-print', name: 'Editorial Print', meta: 'Design · Print', tags: ['print'], yr: '2025', img: 'assets/work-design-print.png', span: 'span-5', badge: 'Studio study',
-      sector: 'Print · Editorial', client: 'Studio study', scope: 'Print + collateral',
-      summary: 'Posters, zines, programmes. Paper, but loud.',
-      body: 'A selection of editorial print studies including risograph zines, event programmes and exhibition collateral.',
-      deliverables: ['Editorial','Zines','Posters','Programmes'] },
-    { id: 'social-grid', name: 'Feeds Worth Following', meta: 'Social · Art direction', tags: ['social'], yr: '2025', img: 'assets/work-social-grid.png', span: 'span-6', badge: 'Studio study',
-      sector: 'Social · Multi-sector', client: 'Studio study', scope: 'Content direction',
-      summary: 'A modular nine-tile direction that keeps a social presence coherent without making every post look the same.',
-      body: 'Strategy, art direction, captions, and templates. A modular grid that lets a single brand post like a studio of five.',
-      deliverables: ['Strategy','Art direction','Templates','Captions','Reels'] },
-    { id: 'design-zine', name: 'Studio Zine vol. 01', meta: 'Print · Editorial', tags: ['print'], yr: '2025', img: 'assets/work-design-zine.png', span: 'span-6', badge: 'Studio study',
-      sector: 'Editorial · Print', client: 'Studio study', scope: 'In-house zine',
-      summary: 'An editorial concept exploring how the studio\'s voice translates into print.',
-      body: 'A 48-page risograph zine concept combining service stories, design studies and editorial observations.',
-      deliverables: ['Editorial','Risograph','Distribution'] }
+    { id: 'bend', name: 'BEND', meta: 'Social · Campaigns', tags: ['social','campaign'], yr: '2026', img: 'assets/work-bend-2026.webp', span: 'span-6', badge: 'Client work',
+      sector: 'Wellness · Riyadh', client: 'BEND', scope: 'Social + campaigns',
+      summary: 'A Riyadh Pilates studio with a calm identity and a social presence built to move.',
+      body: 'We shape BEND\'s ongoing social art direction, campaign concepts and content system across LAGREE MegaPro and Mat Pilates—using the real studio, real programming and an unmistakably Riyadh point of view.',
+      deliverables: ['Social strategy','Art direction','Campaigns','Reels','Stories','Paid creative'] },
+    { id: 'touchspa', name: 'TOUCH+ SPA', meta: 'Brand · Social', tags: ['brand','social','campaign'], yr: '2026', img: 'assets/work-touchspa-2026.webp', span: 'span-6', badge: 'Client work',
+      sector: 'Beauty · Riyadh', client: 'TOUCH+ SPA', scope: 'Brand + social',
+      summary: 'Turning an at-home manicure and pedicure service into a refined, recognisable Riyadh brand.',
+      body: 'For TOUCH+ SPA, we connect the brand system to Arabic-first social content, seasonal campaigns and conversion-focused booking touchpoints—always rooted in comfort, hygiene and quiet luxury at home.',
+      deliverables: ['Brand direction','Social strategy','Arabic content','Campaigns','Reels','Stories'] },
+    { id: 'leon', name: 'LEON', meta: 'Social · Editorial', tags: ['social','campaign'], yr: '2026', img: 'assets/work-leon-2026.webp', span: 'span-4', badge: 'Client work',
+      sector: 'Luxury travel · GCC', client: 'LEON', scope: 'Social + editorial',
+      summary: 'An editorial social world for a luxury travel advisor built around specific, desirable escapes.',
+      body: 'LEON\'s content system translates high-touch travel planning into a quiet-luxury feed: property-led recommendations, destination stories, seasonal series and campaign concepts across the GCC and Europe.',
+      deliverables: ['Content strategy','Art direction','Editorial series','Social content','Reels','Campaigns'] },
+    { id: 'vibekore', name: 'VibeKore', meta: 'Brand · Web · Social', tags: ['brand','web','social'], yr: '2026', img: 'assets/work-vibekore-2026.webp', span: 'span-4', badge: 'Client work',
+      sector: 'Wellness product · Regional', client: 'VibeKore', scope: 'Brand + web + social',
+      summary: 'A bold consumer brand and e-commerce world built around an at-home wellness product.',
+      body: 'From the pink-and-ink identity to the content system and storefront experience, VibeKore turns a functional wellness product into a distinctive, ownable brand with a clear path from discovery to delivery.',
+      deliverables: ['Brand system','Product direction','E-commerce','Social content','Launch creative','Paid ads'] },
+    { id: 'hilo', name: 'HI LO', meta: 'Social · Launch', tags: ['social'], yr: '2026', img: 'assets/work-hilo-2026.webp', span: 'span-4', badge: 'New engagement',
+      sector: 'Boutique fitness · Saudi Arabia', client: 'HI LO', scope: 'Social + launch',
+      summary: 'A warm, expressive social direction for a boutique movement studio.',
+      body: 'The engagement establishes a consistent Instagram and TikTok presence designed to carry HI LO\'s existing identity into discovery, community and bookings—through a clearer grid, highlights, reels and daily stories.',
+      deliverables: ['Social strategy','Content direction','Instagram','TikTok','Reels','Stories'] }
   ];
 
   const grid = document.getElementById('grid');
   function renderCases() {
     grid.innerHTML = cases.map(c => `
-      <article class="case ${c.span} reveal" data-tags="${c.tags.join(' ')}" onclick="openCase('${c.id}')">
+      <button type="button" id="${c.id}" class="case ${c.span} reveal" data-tags="${c.tags.join(' ')}" onclick="openCase('${c.id}')" aria-label="Open ${c.name} client work">
         ${c.badge ? `<span class="badge">${c.badge}</span>` : ''}
-        <div class="img"><img src="${c.img}" alt="${c.name}" /></div>
+        <div class="img"><img src="${c.img}" alt="${c.name} selected client work" loading="lazy" decoding="async" /></div>
         <div class="label">
           <div>
             <div class="name">${c.name}</div>
@@ -321,7 +297,7 @@
           </div>
           <div class="yr">${c.yr}</div>
         </div>
-      </article>
+      </button>
     `).join('');
     // observe for reveal
     document.querySelectorAll('.case').forEach(el => io.observe(el));
@@ -343,10 +319,13 @@
   }));
 
   // Modal
+  let lastTrigger = null;
   function openCase(id) {
     const c = cases.find(x => x.id === id);
     if (!c) return;
+    lastTrigger = document.activeElement;
     document.getElementById('m-img').src = c.img;
+    document.getElementById('m-img').alt = c.name + ' selected client work';
     document.getElementById('m-eyebrow').textContent = c.meta + ' · ' + c.yr;
     document.getElementById('m-title').innerHTML = c.name + '.';
     document.getElementById('m-client').textContent = c.client;
@@ -366,10 +345,14 @@
     }
     document.getElementById('modal').classList.add('open');
     document.body.style.overflow = 'hidden';
+    if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
+    document.querySelector('.modal .close').focus();
   }
   function closeModal() {
     document.getElementById('modal').classList.remove('open');
     document.body.style.overflow = '';
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    if (lastTrigger && typeof lastTrigger.focus === 'function') lastTrigger.focus();
   }
   function closeModalBg(e) {
     if (e.target.id === 'modal') closeModal();
@@ -382,6 +365,10 @@
   }, { threshold: 0.08 });
 
   renderCases();
+  const initialCase = decodeURIComponent(location.hash.slice(1));
+  if (initialCase && cases.some(c => c.id === initialCase)) {
+    requestAnimationFrame(() => openCase(initialCase));
+  }
 </script>
 
 </body>
