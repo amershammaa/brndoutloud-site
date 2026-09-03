@@ -86,7 +86,7 @@
   body[data-mode="dark"] .case { background: rgba(249,248,245,0.06); }
   .case:hover { transform: translateY(-6px); }
   .case:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-  .case .img { width: 100%; aspect-ratio: 4/5; overflow: hidden; }
+  .case .img { width: 100%; aspect-ratio: 650/560; overflow: hidden; }
   .case .img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
   .case:hover .img img { transform: scale(1.04); }
   .case.wide .img { aspect-ratio: 16/10; }
@@ -174,31 +174,26 @@
     </a>
     <div class="links">
       <a href="work.html" class="current">Work</a>
-      <a href="index.html#packages">Services</a>
+      <a href="index.html#services">Services</a>
       <a href="index.html#proof">The studio</a>
       <a href="index.html#contact">Contact</a>
     </div>
-    <button class="cta" onclick="window.location.href='index.html#contact'">Start a Brand →</button>
+    <button class="cta" onclick="window.location.href='index.html#contact'">Start a project →</button>
   </div>
 </nav>
 
 <header class="work-header">
   <div>
-    <div class="eyebrow">Real client partnerships · selected work</div>
-    <h1>Brands built to be<br/><em>remembered.</em></h1>
-  </div>
-  <div class="meta">
-    <div><strong>5</strong>Featured clients</div>
-    <div><strong>4</strong>Disciplines</div>
-    <div><strong>1</strong>Connected studio</div>
+    <div class="eyebrow">Selected clients</div>
+    <h1>Client <em>work.</em></h1>
   </div>
 </header>
 
 <div class="filters" id="filters">
   <button data-f="all" class="active">All work</button>
   <button data-f="brand">Branding</button>
-  <button data-f="web">Websites &amp; Apps</button>
-  <button data-f="social">Social</button>
+  <button data-f="web">Website</button>
+  <button data-f="social">Social Media</button>
   <button data-f="campaign">Campaigns</button>
   <span class="count" id="count">5 client partnerships</span>
 </div>
@@ -208,9 +203,9 @@
 </section>
 
 <section class="end-cta">
-  <h2>Yours, <em>next.</em></h2>
-  <p>Tell us what you are building. We will show you the closest route and the right starting point.</p>
-  <a href="index.html#contact">Start your brand <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <h2>Have a <em>project?</em></h2>
+  <p>Tell us what you need.</p>
+  <a href="index.html#contact">Contact us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </section>
 
 <footer>
@@ -257,10 +252,10 @@
 
   // CASES
   const cases = [
-    { id: 'bend', name: 'BEND', meta: 'Social · Campaigns', tags: ['social','campaign'], yr: '2026', img: 'assets/work-bend-2026.webp', span: 'span-6', badge: 'Client work',
+    { id: 'bend', name: 'BEND', meta: 'Social Media · Campaigns', tags: ['social','campaign'], yr: '2026', img: 'assets/instagram-bend-live.png', span: 'span-6', badge: '@bend.sa',
       sector: 'Wellness · Riyadh', client: 'BEND', scope: 'Social + campaigns',
-      summary: 'A Riyadh Pilates studio with a calm identity and a social presence built to move.',
-      body: 'We shape BEND\'s ongoing social art direction, campaign concepts and content system across LAGREE MegaPro and Mat Pilates—using the real studio, real programming and an unmistakably Riyadh point of view.',
+      summary: 'BEND\'s live Instagram grid.',
+      body: 'Social art direction, campaign concepts and content across Lagree, Hot Mat Pilates, Barre and Reformer.',
       deliverables: ['Social strategy','Art direction','Campaigns','Reels','Stories','Paid creative'] },
     { id: 'touchspa', name: 'TOUCH+ SPA', meta: 'Brand · Social', tags: ['brand','social','campaign'], yr: '2026', img: 'assets/work-touchspa-2026.webp', span: 'span-6', badge: 'Client work',
       sector: 'Beauty · Riyadh', client: 'TOUCH+ SPA', scope: 'Brand + social',
@@ -272,15 +267,15 @@
       summary: 'An editorial social world for a luxury travel advisor built around specific, desirable escapes.',
       body: 'LEON\'s content system translates high-touch travel planning into a quiet-luxury feed: property-led recommendations, destination stories, seasonal series and campaign concepts across the GCC and Europe.',
       deliverables: ['Content strategy','Art direction','Editorial series','Social content','Reels','Campaigns'] },
-    { id: 'vibekore', name: 'VibeKore', meta: 'Brand · Web · Social', tags: ['brand','web','social'], yr: '2026', img: 'assets/work-vibekore-2026.webp', span: 'span-4', badge: 'Client work',
-      sector: 'Wellness product · Regional', client: 'VibeKore', scope: 'Brand + web + social',
-      summary: 'A bold consumer brand and e-commerce world built around an at-home wellness product.',
-      body: 'From the pink-and-ink identity to the content system and storefront experience, VibeKore turns a functional wellness product into a distinctive, ownable brand with a clear path from discovery to delivery.',
+    { id: 'vibekore', name: 'VibeKore', meta: 'Brand · Website · Social', tags: ['brand','web','social'], yr: '2026', img: 'assets/instagram-vibekore-live.png', span: 'span-4', badge: '@vibekore.me',
+      sector: 'Wellness product · Lebanon', client: 'VibeKore', scope: 'Brand + website + social',
+      summary: 'VibeKore\'s live Instagram grid.',
+      body: 'Brand identity, e-commerce website and social content for an at-home whole-body vibration plate.',
       deliverables: ['Brand system','Product direction','E-commerce','Social content','Launch creative','Paid ads'] },
-    { id: 'hilo', name: 'HI LO', meta: 'Social · Launch', tags: ['social'], yr: '2026', img: 'assets/work-hilo-2026.webp', span: 'span-4', badge: 'New engagement',
-      sector: 'Boutique fitness · Saudi Arabia', client: 'HI LO', scope: 'Social + launch',
-      summary: 'A warm, expressive social direction for a boutique movement studio.',
-      body: 'The engagement establishes a consistent Instagram and TikTok presence designed to carry HI LO\'s existing identity into discovery, community and bookings—through a clearer grid, highlights, reels and daily stories.',
+    { id: 'hilo', name: 'HI LO', meta: 'Social Media', tags: ['social'], yr: '2026', img: 'assets/instagram-hilo-live.png', span: 'span-4', badge: '@hi.lo_sa',
+      sector: 'Boutique fitness · Riyadh', client: 'HI LO', scope: 'Social media',
+      summary: 'HI LO\'s live Instagram grid.',
+      body: 'Bilingual Instagram and TikTok content for HI LO\'s gym, Reformer Pilates and personal training offer.',
       deliverables: ['Social strategy','Content direction','Instagram','TikTok','Reels','Stories'] }
   ];
 

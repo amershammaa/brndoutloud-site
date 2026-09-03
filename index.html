@@ -89,15 +89,8 @@ body.menu-open { overflow: hidden; }
 .hero-content .secondary:hover { opacity: 0.7; }
 .hero-scroll { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(249, 248, 245, 0.55); text-transform: uppercase; }
 
-/* STATS STRIP */
-.stats { background: var(--cream); padding: 48px 48px; border-bottom: 1px solid var(--line); }
-.stats-inner { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
-.stat-cell { display: flex; flex-direction: column; gap: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
-.stat-cell strong { display: block; font-family: 'Fraunces', serif; font-weight: 500; font-size: 64px; color: var(--fg); line-height: 1; letter-spacing: -0.03em; }
-.stat-cell span { display: block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--fg-soft); }
-
 /* SECTIONS */
-section.block { max-width: 1440px; margin: 0 auto; padding: 72px 48px; }
+section.block { max-width: 1440px; margin: 0 auto; padding: 72px 48px; scroll-margin-top: 128px; }
 .section-head { display: grid; grid-template-columns: 180px 1fr; gap: 40px; align-items: baseline; margin-bottom: 32px; }
 .section-head .num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.24em; color: var(--accent); padding-top: 14px; text-transform: uppercase; }
 .section-head h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(38px, 5.4vw, 80px); line-height: 1.02; letter-spacing: -0.028em; color: var(--fg); max-width: 900px; }
@@ -106,42 +99,46 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 72px 48px; }
 
 
 
-/* PACKAGES */
-.packages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-.pkg { padding: 28px 26px; border-radius: 16px; display: flex; flex-direction: column; gap: 14px; background: var(--cream-warm); color: var(--fg); transition: transform 0.3s, box-shadow 0.3s; position: relative; min-height: 260px; }
-.pkg:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -20px rgba(108,6,43,0.18); }
-.pkg.dark { background: var(--burgundy); color: var(--cream); }
+/* SERVICES */
+.services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.service-card { position: relative; min-height: 310px; border-radius: 18px; overflow: hidden; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.35s ease, box-shadow 0.35s ease; }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 22px 52px -28px rgba(78, 2, 32, 0.42); }
+.service-card.branding { background: var(--burgundy); color: var(--cream); }
+.service-card.social { background: var(--coral); color: var(--burgundy-deep); }
+.service-card.website { background: var(--cream-warm); color: var(--burgundy); border: 1px solid var(--line); }
+.service-card.application { background: var(--pink); color: var(--burgundy-deep); }
+.service-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; position: relative; z-index: 2; }
+.service-index { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.72; }
+.service-card h3 { position: relative; z-index: 2; font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(34px, 4vw, 60px); line-height: 0.98; letter-spacing: -0.035em; max-width: 520px; }
+.service-list { position: relative; z-index: 2; font-family: 'DM Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.76; max-width: 430px; }
+.service-art { position: absolute; right: 26px; top: 28px; width: 150px; height: 112px; opacity: 0.92; pointer-events: none; }
+.branding .service-art::before, .branding .service-art::after { content: ''; position: absolute; border-radius: 50%; border: 2px solid var(--pink); }
+.branding .service-art::before { width: 92px; height: 92px; right: 0; top: 0; }
+.branding .service-art::after { width: 58px; height: 58px; left: 0; bottom: 0; background: var(--coral); border-color: var(--coral); }
+.social .service-art { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; transform: rotate(5deg); }
+.social .service-art span { display: block; aspect-ratio: 1; background: rgba(249,248,245,0.86); border-radius: 3px; }
+.social .service-art span:nth-child(2), .social .service-art span:nth-child(6), .social .service-art span:nth-child(7) { background: var(--burgundy); }
+.website .service-art { border: 2px solid var(--burgundy); border-radius: 10px; padding: 22px 12px 12px; }
+.website .service-art::before { content: '●  ●  ●'; position: absolute; left: 12px; top: 5px; font-size: 8px; letter-spacing: 4px; color: var(--coral); }
+.website .service-art span { display: block; height: 7px; background: var(--burgundy); border-radius: 999px; margin-bottom: 8px; }
+.website .service-art span:nth-child(2) { width: 70%; background: var(--pink); }
+.website .service-art span:nth-child(3) { width: 86%; opacity: 0.4; }
+.application .service-art::before, .application .service-art::after { content: ''; position: absolute; width: 66px; height: 104px; border: 2px solid var(--burgundy); border-radius: 14px; background: rgba(249,248,245,0.3); }
+.application .service-art::before { left: 10px; top: 2px; transform: rotate(-7deg); }
+.application .service-art::after { right: 8px; top: 8px; transform: rotate(7deg); background: rgba(249,248,245,0.78); }
 
-.pkg .pk-tag { display: inline-flex; align-items: center; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; background: var(--accent); color: var(--cream); align-self: flex-start; }
-.pkg.dark .pk-tag { background: var(--pink); color: var(--burgundy); }
-.pkg h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(22px, 2vw, 26px); letter-spacing: -0.02em; line-height: 1.05; }
-.pkg p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.55; opacity: 0.78; }
-.pkg .pk-price { margin-top: auto; padding-top: 12px; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--fg-soft); line-height: 1.3; }
-.pkg.dark .pk-price { color: rgba(249,248,245,0.7); }
-.pkg .pk-price strong { display: block; font-family: 'Fraunces', serif; font-weight: 500; font-size: 30px; letter-spacing: -0.025em; line-height: 1.1; color: var(--fg); margin: 4px 0; }
-.pkg.dark .pk-price strong { color: var(--cream); }
-.pkg .pk-price small { font-size: 14px; font-weight: 400; opacity: 0.7; margin-left: 2px; }
-.pkg .pk-cta { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; border-bottom: 1px solid currentColor; padding-bottom: 4px; transition: opacity 0.25s; color: inherit; }
-.pkg .pk-cta:hover { opacity: 0.7; }
-.pkg .pk-cta span { transition: transform 0.25s; display: inline-block; }
-.pkg .pk-cta:hover span { transform: translateX(4px); }
-.pkg-footer { margin-top: 32px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--fg-soft); text-align: center; line-height: 1.55; }
-.pkg-footer a { color: var(--accent); border-bottom: 1px solid currentColor; padding-bottom: 1px; transition: opacity 0.2s; }
-.pkg-footer a:hover { opacity: 0.7; }
-
-/* WORK */
-.work-grid { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; gap: 18px; padding: 4px 4px 18px; margin: 0 -48px 0 0; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-.work-grid::-webkit-scrollbar { display: none; }
-.work-grid .work-tile { flex: 0 0 calc((100% - 36px) / 3); scroll-snap-align: start; min-width: 280px; }
-.work-tile { aspect-ratio: 4/5; border-radius: 14px; overflow: hidden; background: var(--cream-warm); position: relative; cursor: pointer; transition: transform 0.4s; display: block; }
-.work-tile:hover { transform: translateY(-4px); }
-.work-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
-.work-tile:hover img { transform: scale(1.04); }
-.work-tile .label { position: absolute; left: 18px; right: 18px; bottom: 18px; background: var(--cream); border-radius: 11px; padding: 14px 16px; display: flex; justify-content: space-between; align-items: flex-end; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.15); }
-.work-tile .label .name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 19px; color: var(--fg); letter-spacing: -0.018em; line-height: 1.1; }
-.work-tile .label .meta { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-top: 4px; }
-.work-tile .label .yr { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--fg-soft); align-self: flex-start; }
-.work-context { max-width: 660px; margin: -8px 0 30px 220px; font-size: 16px; line-height: 1.6; color: var(--fg-soft); }
+/* CLIENT WORK */
+.client-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 18px; }
+.client-card { grid-column: span 4; display: block; min-width: 0; border-radius: 16px; overflow: hidden; background: var(--cream-warm); border: 1px solid var(--line); transition: transform 0.35s ease, box-shadow 0.35s ease; }
+.client-card.wide { grid-column: span 6; }
+.client-card:hover { transform: translateY(-4px); box-shadow: 0 22px 52px -30px rgba(78, 2, 32, 0.35); }
+.client-card .grid-image { aspect-ratio: 650 / 560; overflow: hidden; background: #ece8df; }
+.client-card .grid-image img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 0.65s ease; }
+.client-card:hover .grid-image img { transform: scale(1.025); }
+.client-caption { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; padding: 18px 20px 20px; background: var(--cream); }
+.client-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 24px; line-height: 1; letter-spacing: -0.025em; }
+.client-handle { margin-top: 7px; font-family: 'DM Mono', monospace; font-size: 9px; line-height: 1.4; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+.client-kind { font-family: 'DM Mono', monospace; font-size: 9px; line-height: 1.4; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-soft); text-align: right; }
 .work-link { display: flex; justify-content: center; margin-top: 56px; }
 .work-link a { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; padding: 16px 30px; border-radius: 999px; border: 1px solid var(--fg); transition: background 0.25s, color 0.25s, transform 0.2s; }
 .work-link a:hover { background: var(--fg); color: var(--cream); transform: translateY(-2px); }
@@ -190,15 +187,10 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   nav.top .links { display: none; }
   .hero { height: 88vh; min-height: 640px; }
   .hero-content { padding: 0 24px 64px; }
-  .stats { padding: 40px 24px; }
-  .stats-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
-  .stats strong { font-size: 44px; }
   section.block { padding: 64px 24px; }
   .section-head { grid-template-columns: 1fr; gap: 18px; }
-  .work-context { margin-left: 0; }
-  .services { grid-template-columns: 1fr; }
-  .service-card { padding: 40px 28px; }
-  .work-grid { grid-template-columns: 1fr 1fr; }
+  .service-card { min-height: 280px; }
+  .client-card, .client-card.wide { grid-column: span 6; }
   .engage { grid-template-columns: 1fr; gap: 18px; }
   .engage-card { padding: 40px 28px; }
   
@@ -210,11 +202,6 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   footer .foot-top { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 @media (max-width: 640px) {
-  .work-grid { margin: 0 -24px 0 0; padding-left: 24px; }
-  .work-grid .work-tile { flex: 0 0 82%; min-width: 260px; }
-  
-  
-  
   footer .foot-top { grid-template-columns: 1fr; }
 }
 
@@ -223,19 +210,19 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   nav.top .links { display: none; }
   nav.top .logo .name { display: none; }
   nav.top .nav-toggle { display: flex; }
-  .packages { grid-template-columns: repeat(2, 1fr); }
-  .pkg { padding: 24px 22px; min-height: 220px; }
-  .work-grid .work-tile { flex: 0 0 calc((100% - 18px) / 2); }
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { padding: 26px; }
   .testi-body { margin-left: 0; }
   .testi-block { padding: 56px 24px; }
 }
 @media (max-width: 640px) {
-  .stats-inner { grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .stat-cell { gap: 10px; padding-top: 10px; }
-  .stat-cell strong { font-size: 32px; }
-  .stat-cell span { font-size: 8.5px; letter-spacing: 0.18em; }
-  .work-grid { margin: 0 -24px 0 0; padding-left: 24px; }
-  .work-grid .work-tile { flex: 0 0 82%; min-width: 260px; }
+  .client-card, .client-card.wide { grid-column: span 12; }
+  .client-caption { padding: 16px; }
+  .client-name { font-size: 22px; }
+  .service-art { width: 112px; height: 84px; right: 18px; top: 22px; }
+  .branding .service-art::before { width: 68px; height: 68px; }
+  .branding .service-art::after { width: 42px; height: 42px; }
+  .application .service-art::before, .application .service-art::after { width: 49px; height: 78px; }
   .hero-content h1 { font-size: clamp(40px, 10vw, 64px); }
   .hero-content p { font-size: 16px; }
   .hero-content .row { gap: 10px; }
@@ -245,13 +232,6 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   nav.top .logo img { height: 72px; }
 }
 
-
-@media (max-width: 640px) {
-  .packages { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 4px 24px 12px; margin: 0 -24px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-  .packages::-webkit-scrollbar { display: none; }
-  .pkg { flex: 0 0 82%; scroll-snap-align: start; min-width: 280px; min-height: 240px; padding: 24px 22px; }
-  .pkg-footer { padding: 0 4px; }
-}
 
 /* REVEAL */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s, transform 0.8s cubic-bezier(.2,.8,.2,1); }
@@ -268,7 +248,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
         <img src="assets/logo.png" alt="BRND OUT LOUD" />
       </a>
       <div class="links">
-        <a href="#packages">Services</a>
+        <a href="#services">Services</a>
         <a href="work.html">Work</a>
         <a href="#contact">Contact</a>
       </div>
@@ -277,7 +257,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
       </button>
     </div>
     <div class="mobile-menu">
-      <a href="#packages" onclick="document.body.classList.remove('menu-open')">Services</a>
+      <a href="#services" onclick="document.body.classList.remove('menu-open')">Services</a>
       <a href="work.html">Work</a>
       <a href="#contact" onclick="document.body.classList.remove('menu-open')">Contact</a>
       <a href="https://wa.me/971504314723" target="_blank" rel="noopener" class="mobile-wa">WhatsApp +971 50 431 4723</a>
@@ -287,7 +267,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>Brands that get seen. <em>Remembered. Booked.</em></h1>
-    <p>Strategy, identity, design, social, websites and apps, handled by one connected studio.</p>
+    <p>Branding, social media, websites and application development.</p>
     <div class="row">
       <a href="#work" class="primary">See our work</a>
       <a href="#contact" class="secondary">Start a project →</a>
@@ -296,133 +276,81 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
   <div class="hero-scroll">Scroll</div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="stats-inner">
-    <div class="stat-cell"><strong>5</strong><span>Featured client partnerships</span></div>
-    <div class="stat-cell"><strong>KSA+</strong><span>Saudi Arabia and the region</span></div>
-    <div class="stat-cell"><strong>1</strong><span>Connected studio, idea to launch</span></div>
-  </div>
-</section>
-
-
-
-<!-- PACKAGES -->
-<section class="block" id="packages">
+<!-- SERVICES -->
+<section class="block" id="services">
   <div class="section-head">
-    <div class="num">01 / Ways to start</div>
-    <h2>One studio. <em>Four clear starting points.</em></h2>
+    <div class="num">01 / Services</div>
+    <h2>Services.</h2>
   </div>
-  <div class="packages">
-
-    <div class="pkg">
-      <h3>Identity Sprint</h3>
-      <p>Strategy, identity, and voice for brands that need a strong, usable foundation quickly.</p>
-      <div class="pk-price">From <strong>8,000 SAR</strong></div>
-      <a class="pk-cta" href="https://wa.me/971504314723" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
-    </div>
-
-    <div class="pkg">
-      <h3>Full Brand Build</h3>
-      <p>The complete identity, website, and launch system, built by one coordinated team.</p>
-      <div class="pk-price"><strong>8 to 12 weeks</strong></div>
-      <a class="pk-cta" href="https://wa.me/971504314723" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
-    </div>
-
-    <div class="pkg">
-      <h3>Social &amp; Growth</h3>
-      <p>Strategy, content, community, creative, and paid campaigns that keep the brand moving.</p>
-      <div class="pk-price"><strong>Ongoing</strong></div>
-      <a class="pk-cta" href="https://wa.me/971504314723" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
-    </div>
-
-    <div class="pkg dark">
-      <div class="pk-tag">Digital</div>
-      <h3>Websites &amp; Apps</h3>
-      <p>Brand-led websites, landing pages, product experiences, and apps built to turn attention into action.</p>
-      <div class="pk-price"><strong>Custom scope</strong></div>
-      <a class="pk-cta" href="https://wa.me/971504314723" target="_blank" rel="noopener">Reach out on WhatsApp <span>&rarr;</span></a>
-    </div>
-
+  <div class="services-grid">
+    <article class="service-card branding">
+      <div class="service-top"><span class="service-index">01</span></div>
+      <div class="service-art" aria-hidden="true"></div>
+      <h3>Branding</h3>
+      <div class="service-list">Strategy · Naming · Identity · Guidelines</div>
+    </article>
+    <article class="service-card social">
+      <div class="service-top"><span class="service-index">02</span></div>
+      <div class="service-art" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <h3>Social Media</h3>
+      <div class="service-list">Strategy · Content · Reels · Campaigns</div>
+    </article>
+    <article class="service-card website">
+      <div class="service-top"><span class="service-index">03</span></div>
+      <div class="service-art" aria-hidden="true"><span></span><span></span><span></span></div>
+      <h3>Website</h3>
+      <div class="service-list">Design · Development · E-commerce · SEO</div>
+    </article>
+    <article class="service-card application">
+      <div class="service-top"><span class="service-index">04</span></div>
+      <div class="service-art" aria-hidden="true"></div>
+      <h3>Application<br/>Development</h3>
+      <div class="service-list">Product Design · Web Apps · Mobile Apps · Launch</div>
+    </article>
   </div>
-  <div class="pkg-footer">First usable pieces from an Identity Sprint can land in under 10 days. Every scope is confirmed around the business need. <a href="https://wa.me/971504314723" target="_blank" rel="noopener">Tell us what you are building &rarr;</a></div>
 </section>
 
-<!-- WORK -->
+<!-- CLIENT WORK -->
 <section class="block" id="work">
   <div class="section-head">
-    <div class="num">02 / Selected clients</div>
-    <h2>Real clients. <em>Work you can see.</em></h2>
+    <div class="num">02 / Clients</div>
+    <h2>Client work.</h2>
   </div>
-  <p class="work-context">Selected partnerships across wellness, beauty, travel and consumer brands in Saudi Arabia and the region.</p>
-  <div class="work-grid">
-    <a class="work-tile" href="work.html#bend" aria-label="View BEND client work">
-      <img src="assets/work-bend-2026.webp" alt="BEND social campaign for its Riyadh Pilates studio" loading="lazy" decoding="async" />
-      <div class="label">
-        <div>
-          <div class="name">BEND</div>
-          <div class="meta">Social · Campaigns</div>
-        </div>
-        <div class="yr">2026</div>
-      </div>
+  <div class="client-grid">
+    <a class="client-card" href="https://www.instagram.com/bend.sa/" target="_blank" rel="noopener" aria-label="View BEND on Instagram">
+      <div class="grid-image"><img src="assets/instagram-bend-live.png" alt="BEND's actual Instagram grid" loading="lazy" decoding="async" /></div>
+      <div class="client-caption"><div><div class="client-name">BEND</div><div class="client-handle">@bend.sa ↗</div></div><div class="client-kind">Live Instagram grid</div></div>
     </a>
-    <a class="work-tile" href="work.html#touchspa" aria-label="View TOUCH+ SPA client work">
-      <img src="assets/work-touchspa-2026.webp" alt="TOUCH+ SPA social content system for its at-home Riyadh service" loading="lazy" decoding="async" />
-      <div class="label">
-        <div>
-          <div class="name">TOUCH+ SPA</div>
-          <div class="meta">Brand · Social</div>
-        </div>
-        <div class="yr">2026</div>
-      </div>
+    <a class="client-card" href="work.html#touchspa" aria-label="View TOUCH+ SPA client work">
+      <div class="grid-image"><img src="assets/work-touchspa-2026.webp" alt="TOUCH+ SPA Instagram grid" loading="lazy" decoding="async" /></div>
+      <div class="client-caption"><div><div class="client-name">TOUCH+ SPA</div><div class="client-handle">Riyadh</div></div><div class="client-kind">Brand · Social</div></div>
     </a>
-    <a class="work-tile" href="work.html#leon" aria-label="View LEON client work">
-      <img src="assets/work-leon-2026.webp" alt="LEON luxury travel editorial social content" loading="lazy" decoding="async" />
-      <div class="label">
-        <div>
-          <div class="name">LEON</div>
-          <div class="meta">Social · Editorial</div>
-        </div>
-        <div class="yr">2026</div>
-      </div>
+    <a class="client-card" href="work.html#leon" aria-label="View LEON client work">
+      <div class="grid-image"><img src="assets/work-leon-2026.webp" alt="LEON Instagram grid" loading="lazy" decoding="async" /></div>
+      <div class="client-caption"><div><div class="client-name">LEON</div><div class="client-handle">Luxury travel</div></div><div class="client-kind">Social · Editorial</div></div>
     </a>
-    <a class="work-tile" href="work.html#vibekore" aria-label="View VibeKore client work">
-      <img src="assets/work-vibekore-2026.webp" alt="VibeKore brand and e-commerce art direction" loading="lazy" decoding="async" />
-      <div class="label">
-        <div>
-          <div class="name">VibeKore</div>
-          <div class="meta">Brand · Web · Social</div>
-        </div>
-        <div class="yr">2026</div>
-      </div>
+    <a class="client-card wide" href="https://www.instagram.com/vibekore.me/" target="_blank" rel="noopener" aria-label="View VibeKore on Instagram">
+      <div class="grid-image"><img src="assets/instagram-vibekore-live.png" alt="VibeKore's actual Instagram grid" loading="lazy" decoding="async" /></div>
+      <div class="client-caption"><div><div class="client-name">VibeKore</div><div class="client-handle">@vibekore.me ↗</div></div><div class="client-kind">Live Instagram grid</div></div>
     </a>
-    <a class="work-tile" href="work.html#hilo" aria-label="View HI LO client work">
-      <img src="assets/work-hilo-2026.webp" alt="HI LO boutique movement studio social direction" loading="lazy" decoding="async" />
-      <div class="label">
-        <div>
-          <div class="name">HI LO</div>
-          <div class="meta">Social · Launch</div>
-        </div>
-        <div class="yr">2026</div>
-      </div>
+    <a class="client-card wide" href="https://www.instagram.com/hi.lo_sa/" target="_blank" rel="noopener" aria-label="View HI LO on Instagram">
+      <div class="grid-image"><img src="assets/instagram-hilo-live.png" alt="HI LO's actual Instagram grid" loading="lazy" decoding="async" /></div>
+      <div class="client-caption"><div><div class="client-name">HI LO</div><div class="client-handle">@hi.lo_sa ↗</div></div><div class="client-kind">Live Instagram grid</div></div>
     </a>
   </div>
-  <div class="work-link"><a href="work.html">Explore the client work →</a></div>
+  <div class="work-link"><a href="work.html">See all work →</a></div>
 </section>
-
-
-
 
 
 <!-- WHY US -->
 <section class="testi-block" id="proof">
   <div class="testi-inner">
     <div class="section-head">
-      <div class="num">03 / The studio</div>
-      <h2>One team. <em>Every discipline.</em></h2>
+      <div class="num">03 / Studio</div>
+      <h2>BRND OUT LOUD.</h2>
     </div>
     <div class="testi-body">
-      <blockquote>From the first idea to the live experience, every touchpoint is built to feel unmistakably yours.</blockquote>
+      <blockquote>Independent creative agency working across branding, social media, websites and applications.</blockquote>
       <cite>Beirut · Riyadh · Dubai</cite>
     </div>
   </div>
@@ -430,8 +358,8 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 
 <!-- CTA -->
 <section class="end-cta" id="contact">
-  <h2>Ready to make your brand <em>easier to choose?</em></h2>
-  <p>Tell us what you are building. We will recommend the clearest starting point.</p>
+  <h2>Have a <em>project?</em></h2>
+  <p>Tell us what you need.</p>
   <div class="row">
     <a href="https://wa.me/971504314723" target="_blank" rel="noopener" class="primary">WhatsApp +971 50 431 4723</a>
     <a href="mailto:hi@brndoutloud.com" class="secondary">hi@brndoutloud.com</a>
@@ -446,13 +374,13 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
       <div class="brand">
         <img src="assets/logo.png" alt="" />
         <h3>Where brands get heard.</h3>
-        <p>Branding, design, social media, websites and apps, all in one connected studio.</p>
+        <p>Branding, social media, websites and application development.</p>
       </div>
       <div class="col">
         <h4>Studio</h4>
         <ul>
           <li><a href="work.html">Work</a></li>
-          <li><a href="#packages">Services</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#proof">The studio</a></li>
         </ul>
       </div>
@@ -475,7 +403,7 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
 
 <script>
 // Reveal on scroll
-const ro = document.querySelectorAll('.section-head, .svc, .pkg, .work-tile, .testi-inner, .end-cta h2, .end-cta p, .end-cta .row, .stats');
+const ro = document.querySelectorAll('.section-head, .service-card, .client-card, .testi-inner, .end-cta h2, .end-cta p, .end-cta .row');
 ro.forEach(e => e.classList.add('reveal'));
 const io = new IntersectionObserver(es => {
   es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -492,14 +420,23 @@ window.addEventListener('scroll', setNavState, { passive: true });
 setNavState();
 
 // Smooth scroll
+const goToSection = (id, smooth = true) => {
+  const t = document.querySelector(id);
+  if (!t) return;
+  const y = t.getBoundingClientRect().top + window.scrollY - 118;
+  window.scrollTo({ top: y, behavior: smooth ? 'smooth' : 'auto' });
+};
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const id = a.getAttribute('href');
     if (id.length > 1) {
       const t = document.querySelector(id);
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      if (t) { e.preventDefault(); goToSection(id); }
     }
   });
+});
+window.addEventListener('load', () => {
+  if (window.location.hash) setTimeout(() => goToSection(window.location.hash, false), 60);
 });
 </script>
 
