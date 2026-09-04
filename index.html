@@ -134,6 +134,9 @@ section.block { max-width: 1440px; margin: 0 auto; padding: 72px 48px; scroll-ma
 .client-card:hover { transform: translateY(-4px); box-shadow: 0 22px 52px -30px rgba(78, 2, 32, 0.35); }
 .client-card .grid-image { aspect-ratio: 650 / 560; overflow: hidden; background: #ece8df; }
 .client-card .grid-image img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 0.65s ease; }
+.client-card .grid-image.touch-shot img { object-position: center top; }
+.client-card .grid-image.hilo-shot img { object-position: center bottom; }
+.client-card .grid-image.kalm-shot img { object-position: center 32%; }
 .client-card:hover .grid-image img { transform: scale(1.025); }
 .client-caption { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; padding: 18px 20px 20px; background: var(--cream); }
 .client-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 24px; line-height: 1; letter-spacing: -0.025em; }
@@ -322,20 +325,24 @@ footer .foot-bottom { padding-top: 28px; border-top: 1px solid var(--line); disp
       <div class="client-caption"><div><div class="client-name">BEND</div><div class="client-handle">@bend.sa ↗</div></div><div class="client-kind">Live Instagram grid</div></div>
     </a>
     <a class="client-card" href="work.html#touchspa" aria-label="View TOUCH+ SPA client work">
-      <div class="grid-image"><img src="assets/work-touchspa-2026.webp" alt="TOUCH+ SPA Instagram grid" loading="lazy" decoding="async" /></div>
+      <div class="grid-image touch-shot"><img src="assets/instagram-touchspa-supplied.png" alt="TOUCH+ SPA Instagram grid supplied by the client" loading="lazy" decoding="async" /></div>
       <div class="client-caption"><div><div class="client-name">TOUCH+ SPA</div><div class="client-handle">Riyadh</div></div><div class="client-kind">Brand · Social</div></div>
+    </a>
+    <a class="client-card" href="https://www.instagram.com/hi.lo_sa/" target="_blank" rel="noopener" aria-label="View HI LO on Instagram">
+      <div class="grid-image hilo-shot"><img src="assets/instagram-hilo-supplied.png" alt="HI LO Instagram grid supplied by the client" loading="lazy" decoding="async" /></div>
+      <div class="client-caption"><div><div class="client-name">HI LO</div><div class="client-handle">@hi.lo_sa ↗</div></div><div class="client-kind">Instagram grid</div></div>
+    </a>
+    <a class="client-card" href="https://www.instagram.com/thekalmstudio/" target="_blank" rel="noopener" aria-label="View KALM on Instagram">
+      <div class="grid-image kalm-shot"><img src="assets/instagram-kalm-supplied.png" alt="KALM Instagram grid supplied by the client" loading="lazy" decoding="async" /></div>
+      <div class="client-caption"><div><div class="client-name">KALM</div><div class="client-handle">@thekalmstudio ↗</div></div><div class="client-kind">Instagram grid</div></div>
     </a>
     <a class="client-card" href="work.html#leon" aria-label="View LEON client work">
       <div class="grid-image"><img src="assets/work-leon-2026.webp" alt="LEON Instagram grid" loading="lazy" decoding="async" /></div>
       <div class="client-caption"><div><div class="client-name">LEON</div><div class="client-handle">Luxury travel</div></div><div class="client-kind">Social · Editorial</div></div>
     </a>
-    <a class="client-card wide" href="https://www.instagram.com/vibekore.me/" target="_blank" rel="noopener" aria-label="View VibeKore on Instagram">
+    <a class="client-card" href="https://www.instagram.com/vibekore.me/" target="_blank" rel="noopener" aria-label="View VibeKore on Instagram">
       <div class="grid-image"><img src="assets/instagram-vibekore-live.png" alt="VibeKore's actual Instagram grid" loading="lazy" decoding="async" /></div>
       <div class="client-caption"><div><div class="client-name">VibeKore</div><div class="client-handle">@vibekore.me ↗</div></div><div class="client-kind">Live Instagram grid</div></div>
-    </a>
-    <a class="client-card wide" href="https://www.instagram.com/hi.lo_sa/" target="_blank" rel="noopener" aria-label="View HI LO on Instagram">
-      <div class="grid-image"><img src="assets/instagram-hilo-live.png" alt="HI LO's actual Instagram grid" loading="lazy" decoding="async" /></div>
-      <div class="client-caption"><div><div class="client-name">HI LO</div><div class="client-handle">@hi.lo_sa ↗</div></div><div class="client-kind">Live Instagram grid</div></div>
     </a>
   </div>
   <div class="work-link"><a href="work.html">See all work →</a></div>

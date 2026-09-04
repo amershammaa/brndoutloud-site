@@ -196,7 +196,7 @@
   <button data-f="web">Website</button>
   <button data-f="social">Social Media</button>
   <button data-f="campaign">Campaigns</button>
-  <span class="count" id="count">5 client partnerships</span>
+  <span class="count" id="count">6 client partnerships</span>
 </div>
 
 <section class="work-grid" id="grid">
@@ -253,16 +253,26 @@
 
   // CASES
   const cases = [
-    { id: 'bend', name: 'BEND', meta: 'Social Media · Campaigns', tags: ['social','campaign'], yr: '2026', img: 'assets/instagram-bend-live.png', span: 'span-6', badge: '@bend.sa',
+    { id: 'bend', name: 'BEND', meta: 'Social Media · Campaigns', tags: ['social','campaign'], yr: '2026', img: 'assets/instagram-bend-live.png', span: 'span-4', badge: '@bend.sa',
       sector: 'Wellness · Riyadh', client: 'BEND', scope: 'Social + campaigns',
       summary: 'BEND\'s live Instagram grid.',
       body: 'Social art direction, campaign concepts and content across Lagree, Hot Mat Pilates, Barre and Reformer.',
       deliverables: ['Social strategy','Art direction','Campaigns','Reels','Stories','Paid creative'] },
-    { id: 'touchspa', name: 'TOUCH+ SPA', meta: 'Brand · Social', tags: ['brand','social','campaign'], yr: '2026', img: 'assets/work-touchspa-2026.webp', span: 'span-6', badge: 'Client work',
+    { id: 'touchspa', name: 'TOUCH+ SPA', meta: 'Brand · Social', tags: ['brand','social','campaign'], yr: '2026', img: 'assets/instagram-touchspa-supplied.png', position: 'center top', span: 'span-4', badge: 'Client work',
       sector: 'Beauty · Riyadh', client: 'TOUCH+ SPA', scope: 'Brand + social',
       summary: 'Turning an at-home manicure and pedicure service into a refined, recognisable Riyadh brand.',
       body: 'For TOUCH+ SPA, we connect the brand system to Arabic-first social content, seasonal campaigns and conversion-focused booking touchpoints—always rooted in comfort, hygiene and quiet luxury at home.',
       deliverables: ['Brand direction','Social strategy','Arabic content','Campaigns','Reels','Stories'] },
+    { id: 'hilo', name: 'HI LO', meta: 'Social Media', tags: ['social'], yr: '2026', img: 'assets/instagram-hilo-supplied.png', position: 'center bottom', span: 'span-4', badge: '@hi.lo_sa',
+      sector: 'Boutique fitness · Riyadh', client: 'HI LO', scope: 'Social media',
+      summary: 'HI LO\'s Instagram grid.',
+      body: 'Bilingual Instagram and TikTok content for HI LO\'s gym, Reformer Pilates and personal training offer.',
+      deliverables: ['Social strategy','Content direction','Instagram','TikTok','Reels','Stories'] },
+    { id: 'kalm', name: 'KALM', meta: 'Social Media', tags: ['social'], yr: '2026', img: 'assets/instagram-kalm-supplied.png', position: 'center 32%', span: 'span-4', badge: '@thekalmstudio',
+      sector: 'Pilates · Wellness', client: 'KALM', scope: 'Social media',
+      summary: 'KALM Studio\'s Instagram grid.',
+      body: 'The current feed brings together Pilates classes, studio routines and wellness retreat content.',
+      deliverables: ['Instagram','Content','Reels'] },
     { id: 'leon', name: 'LEON', meta: 'Social · Editorial', tags: ['social','campaign'], yr: '2026', img: 'assets/work-leon-2026.webp', span: 'span-4', badge: 'Client work',
       sector: 'Luxury travel · GCC', client: 'LEON', scope: 'Social + editorial',
       summary: 'An editorial social world for a luxury travel advisor built around specific, desirable escapes.',
@@ -272,12 +282,7 @@
       sector: 'Wellness product · Lebanon', client: 'VibeKore', scope: 'Brand + website + social',
       summary: 'VibeKore\'s live Instagram grid.',
       body: 'Brand identity, e-commerce website and social content for an at-home whole-body vibration plate.',
-      deliverables: ['Brand system','Product direction','E-commerce','Social content','Launch creative','Paid ads'] },
-    { id: 'hilo', name: 'HI LO', meta: 'Social Media', tags: ['social'], yr: '2026', img: 'assets/instagram-hilo-live.png', span: 'span-4', badge: '@hi.lo_sa',
-      sector: 'Boutique fitness · Riyadh', client: 'HI LO', scope: 'Social media',
-      summary: 'HI LO\'s live Instagram grid.',
-      body: 'Bilingual Instagram and TikTok content for HI LO\'s gym, Reformer Pilates and personal training offer.',
-      deliverables: ['Social strategy','Content direction','Instagram','TikTok','Reels','Stories'] }
+      deliverables: ['Brand system','Product direction','E-commerce','Social content','Launch creative','Paid ads'] }
   ];
 
   const grid = document.getElementById('grid');
@@ -285,7 +290,7 @@
     grid.innerHTML = cases.map(c => `
       <button type="button" id="${c.id}" class="case ${c.span} reveal" data-tags="${c.tags.join(' ')}" onclick="openCase('${c.id}')" aria-label="Open ${c.name} client work">
         ${c.badge ? `<span class="badge">${c.badge}</span>` : ''}
-        <div class="img"><img src="${c.img}" alt="${c.name} selected client work" loading="lazy" decoding="async" /></div>
+        <div class="img"><img src="${c.img}" alt="${c.name} selected client work"${c.position ? ` style="object-position: ${c.position}"` : ''} loading="lazy" decoding="async" /></div>
         <div class="label">
           <div>
             <div class="name">${c.name}</div>
