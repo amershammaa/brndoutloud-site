@@ -105,6 +105,12 @@
   .case.span-8 { grid-column: span 8; }
   .case.hidden { display: none; }
 
+  /* HI LO: show the supplied six-post grid without the Instagram profile interface. */
+  #hilo .img { aspect-ratio: 686/612; }
+  #hilo .label { position: relative; inset: auto; margin: 0; border-radius: 0; min-height: 78px; box-shadow: none; }
+  .modal .hero-img.hilo-grid { aspect-ratio: 686/612; max-width: 686px; margin: 0 auto; }
+  .modal .hero-img.hilo-grid img { height: 100%; object-fit: cover; object-position: center bottom; }
+
   /* MODAL */
   .modal { position: fixed; inset: 0; background: rgba(26,10,16,0.85); z-index: 100; display: none; align-items: center; justify-content: center; padding: 24px; backdrop-filter: blur(8px); }
   .modal.open { display: flex; animation: fadeIn 0.3s ease; }
@@ -263,9 +269,9 @@
       summary: 'Turning an at-home manicure and pedicure service into a refined, recognisable Riyadh brand.',
       body: 'For TOUCH+ SPA, we connect the brand system to Arabic-first social content, seasonal campaigns and conversion-focused booking touchpoints—always rooted in comfort, hygiene and quiet luxury at home.',
       deliverables: ['Brand direction','Social strategy','Arabic content','Campaigns','Reels','Stories'] },
-    { id: 'hilo', name: 'HI LO', meta: 'Social Media', tags: ['social'], yr: '2026', img: 'assets/instagram-hilo-supplied.png', position: 'center bottom', span: 'span-4', badge: '@hi.lo_sa',
+    { id: 'hilo', name: 'HI LO', meta: 'Social Media', tags: ['social'], yr: '2026', img: 'assets/instagram-hilo-supplied.png?v=20260909-grid', position: 'center bottom', imageClass: 'hilo-grid', span: 'span-4', badge: '@hi.lo_sa',
       sector: 'Boutique fitness · Riyadh', client: 'HI LO', scope: 'Social media',
-      summary: 'HI LO\'s Instagram grid.',
+      summary: 'Social content for HI LO\'s Pilates and gym offer.',
       body: 'Bilingual Instagram and TikTok content for HI LO\'s gym, Reformer Pilates and personal training offer.',
       deliverables: ['Social strategy','Content direction','Instagram','TikTok','Reels','Stories'] },
     { id: 'kalm', name: 'KALM', meta: 'Social Media', tags: ['social'], yr: '2026', img: 'assets/instagram-kalm-supplied.png', position: 'center 32%', span: 'span-4', badge: '@thekalmstudio',
@@ -325,6 +331,7 @@
     const c = cases.find(x => x.id === id);
     if (!c) return;
     lastTrigger = document.activeElement;
+    document.getElementById('m-img').parentElement.className = 'hero-img' + (c.imageClass ? ' ' + c.imageClass : '');
     document.getElementById('m-img').src = c.img;
     document.getElementById('m-img').alt = c.name + ' selected client work';
     document.getElementById('m-eyebrow').textContent = c.meta + ' · ' + c.yr;
